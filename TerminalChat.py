@@ -1,11 +1,11 @@
-from langchain_community.llms import Ollama
+from langchain_ollama import ChatOllama
 
-from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_core.messages import SystemMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables import RunnableWithMessageHistory
 from langchain_core.chat_history import InMemoryChatMessageHistory
 
-llm = Ollama(model="llama3.2")  
+llm = ChatOllama(model="llama3.2")  
 
 
 
@@ -16,7 +16,7 @@ system_message = SystemMessage(
 prompt = ChatPromptTemplate.from_messages([
     system_message,
     MessagesPlaceholder(variable_name="history"),  
-    HumanMessage(content="{input}")
+    ("human", "{input}")
 ])
 
 session_histories = {}

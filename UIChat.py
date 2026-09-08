@@ -10,7 +10,7 @@ import speech_recognition as sr
 import pyttsx3
 
 from langchain_ollama import ChatOllama, OllamaEmbeddings
-from langchain_core.messages import HumanMessage, AIMessage
+from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 from langchain_core.chat_history import InMemoryChatMessageHistory
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -53,21 +53,36 @@ spinner_css = """
 def speak(text):
     """Threaded text-to-speech to prevent UI blocking"""
     def _speak():
-        engine.say(text)
-        engine.runAndWait()
+        try:
+            engine.say(text)
+            engine.runAndWait()
+        except Exception:
+            pass
     Thread(target=_speak).start()
 
 def text_to_speech_and_save(text):
     """Save TTS output as wav and offer download"""
     with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp:
+        try:
+            engine.stop()
+        except Exception:
+            pass
         engine.save_to_file(text, tmp.name)
         engine.runAndWait()
         st.audio(tmp.name)
         with open(tmp.name, "rb") as f:
             st.download_button("Download Audio", f, file_name="response.wav")
 
+@st.cache_resource
+def load_offline_whisper(model_name="base"):
+    """Load Whisper model once and cache it in memory for offline use"""
+    import whisper
+    models_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models")
+    os.makedirs(models_dir, exist_ok=True)
+    return whisper.load_model(model_name, download_root=models_dir)
+
 def recognize_speech_and_save():
-    """Voice input, transcribe, and offer download"""
+    """Voice input, transcribe offline using Whisper, and offer download"""
     r = sr.Recognizer()
     mic_names = sr.Microphone.list_microphone_names()
     if not mic_names:
@@ -79,10 +94,26 @@ def recognize_speech_and_save():
             with st.spinner("🎤 Listening..."):
                 r.adjust_for_ambient_noise(source, duration=0.8)
                 audio = r.listen(source, timeout=8)
-        text = r.recognize_google(audio)
-        st.success(f"Transcribed: {text}")
-        st.download_button("Download Text", text, file_name="transcript.txt")
-        return text
+        with st.spinner("Transcribing speech locally with Whisper..."):
+            wav_data = audio.get_wav_data()
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp_wav:
+                tmp_wav.write(wav_data)
+                tmp_wav_path = tmp_wav.name
+            try:
+                model = load_offline_whisper("base")
+                result = model.transcribe(tmp_wav_path)
+                text = result.get("text", "").strip()
+            finally:
+                if os.path.exists(tmp_wav_path):
+                    os.remove(tmp_wav_path)
+
+        if text:
+            st.success(f"Transcribed: {text}")
+            st.download_button("Download Text", text, file_name="transcript.txt")
+            return text
+        else:
+            st.warning("❌ No speech detected in audio")
+            return ""
     except sr.WaitTimeoutError:
         st.warning("⌛ Listening timed out")
     except sr.UnknownValueError:
@@ -90,38 +121,40 @@ def recognize_speech_and_save():
     except Exception as e:
         st.error(f"⚠️ Recognition error: {str(e)}")
     return ""
+
 def transcribe_audio_file(file):
-    """Transcribe uploaded audio using Whisper"""
-    import whisper
+    """Transcribe uploaded audio offline using Whisper"""
+    if not file:
+        return ""
     import subprocess
 
     # Ensure ffmpeg is working
     try:
         subprocess.run(["ffmpeg", "-version"], check=True, capture_output=True)
-    except Exception as e:
+    except Exception:
         st.error("❌ FFmpeg is not installed or not in PATH. Please install FFmpeg.")
         return ""
 
-    model = whisper.load_model("base")
+    model = load_offline_whisper("base")
 
-    # Save uploaded audio file
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp:
+    suffix = f".{file.name.split('.')[-1]}" if hasattr(file, "name") and "." in file.name else ".mp3"
+    with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
         tmp.write(file.read())
         tmp_path = tmp.name
 
     try:
-        st.info("🔁 Transcribing with Whisper...")
+        st.info("🔁 Transcribing offline with Whisper...")
         result = model.transcribe(tmp_path)
-        if result is None:
-            st.error("❌ Whisper returned no result.")
-            return ""
-        if "text" not in result or not result["text"].strip():
+        if result is None or "text" not in result or not result["text"].strip():
             st.error("❌ Transcription empty or failed.")
             return ""
-        return result["text"]
+        return result["text"].strip()
     except Exception as e:
         st.error(f"❌ Whisper Transcription failed: {e}")
         return ""
+    finally:
+        if os.path.exists(tmp_path):
+            os.remove(tmp_path)
 
 
 # === Chat History Management ===
@@ -177,6 +210,23 @@ def delete_session(session_id):
 def generate_title_from_message(message):
     words = message.split()[:4]
     return " ".join(words) + ("..." if len(message.split()) > 4 else "")
+
+def get_local_ollama_models():
+    """Discover locally available Ollama models without network calls"""
+    try:
+        import ollama
+        response = ollama.list()
+        if hasattr(response, 'models'):
+            models = [m.model for m in response.models]
+        elif isinstance(response, dict):
+            models = [m['name'] for m in response.get('models', [])]
+        else:
+            models = []
+        if models:
+            return models, True
+    except Exception:
+        pass
+    return ["llama3.2:latest", "llama3.2:3b", "mistral:7b"], False
 
 # === Streamlit UI Setup ===
 st.set_page_config(page_title="DRDO AI Assistant", page_icon="🤖", layout="wide")
@@ -301,13 +351,23 @@ with st.sidebar:
             with col2:
                 if st.button("🗑️", key=f"delete_{session['id']}", help="Delete chat"):
                     delete_session(session['id'])
+                    if st.session_state.current_session_id == session['id']:
+                        st.session_state.current_session_id = str(uuid.uuid4())
+                        st.session_state.chat_history = InMemoryChatMessageHistory()
+                        st.session_state.messages = []
+                        st.session_state.session_title = "New Chat"
                     st.rerun()
             st.markdown(f"<small style='color: #666;'>{time_str}</small>", unsafe_allow_html=True)
             st.markdown("---")
     else:
         st.markdown("*No chat history yet*")
     st.markdown("### ⚙️ Configuration")
-    model_name = st.selectbox("Model", ["llama3.2:3b", "mistral:7b"], index=0)
+    local_models, ollama_connected = get_local_ollama_models()
+    if ollama_connected:
+        st.caption("🟢 Local Ollama: Connected")
+    else:
+        st.caption("🟠 Local Ollama: Run `ollama serve` offline")
+    model_name = st.selectbox("Model", local_models, index=0)
     st.session_state.system_prompt = st.text_area("System Prompt", value=st.session_state.system_prompt)
     st.markdown("### 🔊 Voice Features")
     use_voice_input = st.toggle("🎙 Voice Input", value=False)
@@ -334,20 +394,34 @@ with col2:
     audio_file = st.file_uploader("🎙 Upload Audio", type=["mp3", "wav", "m4a"])
 
 
-# === Document Processing ===
+# === Document Processing (Cached Locally) ===
 retriever = None
 if uploaded_file:
-    with tempfile.NamedTemporaryFile(delete=False, suffix=f".{uploaded_file.name.split('.')[-1]}") as tmp:
-        tmp.write(uploaded_file.getbuffer())
-        file_path = tmp.name
-    loader = PyPDFLoader(file_path) if uploaded_file.type == "application/pdf" else TextLoader(file_path)
-    docs = loader.load()
-    splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
-    chunks = splitter.split_documents(docs)
-    embeddings = OllamaEmbeddings(model=model_name)
-    db = FAISS.from_documents(chunks, embeddings)
-    retriever = db.as_retriever(search_kwargs={"k": 3})
-    st.success(f"✅ Loaded {len(chunks)} document chunks")
+    file_id = f"{uploaded_file.name}_{uploaded_file.size}"
+    if "current_doc_id" not in st.session_state or st.session_state.current_doc_id != file_id:
+        with st.spinner("📄 Indexing document offline with FAISS..."):
+            with tempfile.NamedTemporaryFile(delete=False, suffix=f".{uploaded_file.name.split('.')[-1]}") as tmp:
+                tmp.write(uploaded_file.getbuffer())
+                file_path = tmp.name
+            try:
+                loader = PyPDFLoader(file_path) if uploaded_file.type == "application/pdf" else TextLoader(file_path, encoding="utf-8")
+                docs = loader.load()
+                splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
+                chunks = splitter.split_documents(docs)
+                embeddings = OllamaEmbeddings(model=model_name)
+                db = FAISS.from_documents(chunks, embeddings)
+                st.session_state.doc_retriever = db.as_retriever(search_kwargs={"k": 3})
+                st.session_state.current_doc_id = file_id
+                st.session_state.doc_chunks_count = len(chunks)
+            finally:
+                if os.path.exists(file_path):
+                    os.remove(file_path)
+    retriever = st.session_state.get("doc_retriever")
+    st.success(f"✅ Loaded {st.session_state.get('doc_chunks_count', 0)} document chunks")
+elif "current_doc_id" in st.session_state:
+    st.session_state.pop("current_doc_id", None)
+    st.session_state.pop("doc_retriever", None)
+    st.session_state.pop("doc_chunks_count", None)
 
 # === Display Chat Messages ===
 for msg in st.session_state.messages:
@@ -366,12 +440,14 @@ for msg in st.session_state.messages:
 # === Input Handling ===
 # Transcribe audio before any UI input interaction
 transcribed_input = None
-if audio_file and "last_audio_file" not in st.session_state or st.session_state.last_audio_file != audio_file:
+if audio_file and ("last_audio_file" not in st.session_state or st.session_state.last_audio_file != audio_file):
     st.session_state.last_audio_file = audio_file
     st.info("📥 Transcribing audio file using Whisper...")
     transcribed_input = transcribe_audio_file(audio_file)
     if transcribed_input:
         st.success(f"✅ Transcribed Text: {transcribed_input}")
+elif not audio_file:
+    st.session_state.last_audio_file = None
 user_input = None  # initialize early
 
 input_col, voice_col = st.columns([0.85, 0.15])
@@ -417,15 +493,15 @@ if user_input:
                 context = f"Document Context:\n{context}\n\n"
             except Exception as e:
                 st.error(f"⚠️ Retrieval error: {str(e)}")
-        messages = [AIMessage(content=st.session_state.system_prompt)] + list(st.session_state.chat_history.messages)
+        messages = [SystemMessage(content=st.session_state.system_prompt)] + list(st.session_state.chat_history.messages[:-1])
         response = llm.invoke(messages + [HumanMessage(content=f"{context}User: {user_input}")])
         spinner_placeholder.empty()  # Remove spinner
         st.chat_message("assistant", avatar="🤖").markdown(response.content)
         st.session_state.chat_history.add_ai_message(response.content)
         st.session_state.messages.append(AIMessage(content=response.content))
         if use_voice_output:
-            speak(response.content)
             text_to_speech_and_save(response.content)
+            speak(response.content)
         save_session(
             st.session_state.current_session_id,
             st.session_state.session_title,
