@@ -1,0 +1,74 @@
+PROJECT KESTREL — FIELD TEST PROGRAM HANDBOOK
+Revision 4.2 (internal, fictional document used for evaluation)
+
+1. PROGRAM OVERVIEW
+
+Project Kestrel is a research program to build a fixed-wing autonomous survey drone for mapping flood plains and river banks. The program started as a feasibility study in the spring of 2027 and was approved for full development after the design review. The drone is designed to fly pre-planned survey routes without a pilot in the loop, capture overlapping aerial images and laser altimetry, and return to its launch point automatically if the link is lost.
+
+The program office is located in Building C of the Pune research campus. All field activity is coordinated by the Flight Test Cell, which reports to the program director. This handbook describes the people, schedule, hardware, test sites and safety rules that apply to every field test.
+
+2. TEAM AND RESPONSIBILITIES
+
+The program director is Arjun Mehta, who owns the budget, the external partnerships and the go/no-go decision for each test campaign. The lead engineer of Project Kestrel is Meera Rao; she is responsible for the overall system design and signs off every airframe modification. The flight test manager is Daniel Okafor, who plans each sortie, briefs the crew and keeps the flight log.
+
+Avionics and flight control software are owned by Priya Nair. The payload team, responsible for the camera and the laser altimeter, is led by Tomasz Wilk. Ground station software and the mission planner are maintained by Lena Fischer. Safety and regulatory compliance are handled by Rahul Deshpande, who is the only person who can declare a test range "hot" or "cold".
+
+Each sortie needs at least four people on site: the flight test manager, a safety officer, a ground station operator and a visual observer. No sortie may start if the visual observer cannot see the aircraft at the launch point.
+
+3. SCHEDULE AND MILESTONES
+
+The preliminary design review was completed on 2 September 2028. The critical design review followed on 19 January 2029, after which the first two airframes were ordered. Ground vibration testing of airframe K-01 finished on 7 June 2029.
+
+The first flight of airframe K-01 took place on 23 October 2029 at the Hampi test site. It lasted eleven minutes and was flown manually for safety. The first fully autonomous survey flight was on 15 April 2030.
+
+The certification campaign is planned to run from November 2030 to February 2031. The launch date of Project Kestrel, meaning the first operational survey for a customer, is 14 March 2031. Any slip in the certification campaign moves the launch date by the same amount.
+
+4. AIRFRAME SPECIFICATIONS
+
+The Kestrel airframe has a wingspan of 3.4 metres and a length of 1.9 metres. The fuselage is a carbon fibre monocoque; the wings are foam-core with a fibreglass skin so that field repairs are possible with standard materials. Maximum take-off weight is 18.5 kilograms, of which the payload bay can carry up to 4 kilograms.
+
+Cruise speed is 72 kilometres per hour and the stall speed is 41 kilometres per hour. The service ceiling is 3,000 metres above sea level, although survey flights normally stay below 400 metres above ground. The aircraft is launched from a pneumatic catapult and lands on a belly skid; there is no landing gear.
+
+5. PROPULSION AND ENDURANCE
+
+Kestrel is powered by a single 2.2 kilowatt brushless electric motor driving a folding pusher propeller. Energy comes from two lithium-ion packs of 22 ampere-hours each, wired in parallel. Measured endurance at cruise speed is 2 hours and 40 minutes with a full payload, and 3 hours and 5 minutes with an empty payload bay.
+
+Batteries must be stored at 40 to 60 percent charge between campaigns and must never be charged inside the hangar. A pack is retired after 300 charge cycles or if its capacity falls below 80 percent of the rated value, whichever happens first.
+
+6. PAYLOAD
+
+The standard payload is a 42-megapixel mapping camera mounted on a two-axis stabilised gimbal together with a single-beam laser altimeter. The camera triggers automatically every 1.5 seconds during a survey leg, which gives 75 percent forward overlap at the standard survey altitude of 120 metres. The laser altimeter measures height above ground at 50 readings per second with a stated accuracy of 5 centimetres.
+
+Images are stored on two mirrored 512-gigabyte cards. Nothing is transmitted over the radio link except telemetry and a low-resolution preview stream.
+
+7. TEST SITES
+
+Three test sites are approved for Kestrel. The primary test site is Hampi, in Karnataka, chosen because the boulder fields and river channels resemble the target terrain and the airspace is quiet. The secondary site is the Bhigwan reservoir, used for long-endurance and water-crossing tests. A third site near Lonavala is used only during the monsoon for wet-weather trials.
+
+At Hampi the launch point is fixed at the eastern edge of the site and the recovery area is a 200 by 80 metre cleared strip. Flights over the river are only allowed between 07:00 and 11:00 because of afternoon winds.
+
+8. TEST RESULTS SUMMARY
+
+By the end of the 2029–2030 season the program had flown 64 sorties with a total of 71 flight hours. The longest single flight lasted 2 hours and 31 minutes at the Bhigwan reservoir. Mapping accuracy on a surveyed reference field at Hampi was 3.8 centimetres horizontal and 6.1 centimetres vertical, which meets the requirement of 5 centimetres horizontal and 10 centimetres vertical.
+
+Autonomous landings achieved an average touchdown error of 6.5 metres from the planned point. The goal for the certification campaign is to bring this below 5 metres.
+
+9. INCIDENTS
+
+Two incidents were recorded. On 2 February 2030 airframe K-02 suffered a lost link for 48 seconds over Bhigwan; it executed the return-to-home procedure correctly and landed without damage. On 11 May 2030 airframe K-01 made a hard landing at Hampi after a gust during final approach, cracking the left wing root. The wing was replaced and the aircraft flew again nine days later. The root cause of the hard landing was a crosswind limit that had been set too high; the limit was reduced from 9 to 7 metres per second.
+
+10. BUDGET
+
+The approved budget for the development phase is 38.6 million rupees, of which 14.2 million is allocated to airframes and spares, 9.8 million to payload hardware, 6.1 million to field operations and travel, and the remainder to software, certification and contingency. Any change above 500,000 rupees must be approved by the program director.
+
+11. SUPPLIERS
+
+Carbon fibre fuselage shells are supplied by Vayu Composites of Bengaluru. Motors and speed controllers come from Electrodrive Systems. Battery packs are assembled by Kaveri Power Cells using cells from a single production lot per campaign. The mapping camera is purchased from an overseas distributor and has a lead time of fourteen weeks, which makes it the longest-lead item in the program.
+
+12. SAFETY RULES
+
+No flight may take place if the wind at the launch point exceeds 7 metres per second, if visibility is below 3 kilometres, or if rain is falling at the Hampi or Bhigwan sites. Every sortie must have a written flight card signed by the flight test manager and the safety officer.
+
+The geofence is set 300 metres inside the approved range boundary. If the aircraft crosses the geofence it automatically enters a loiter, and if it is still outside after 60 seconds it deploys its recovery parachute. The parachute has been tested eleven times, all successfully.
+
+All crew must complete the Kestrel safety briefing once per campaign, and the briefing record is kept by Rahul Deshpande.

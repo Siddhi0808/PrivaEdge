@@ -1,32 +1,42 @@
+"""Offline AI Assistant - Streamlit web app.
+
+Features: local LLM chat (Ollama), Q&A over an uploaded PDF/TXT (RAG with FAISS),
+offline speech-to-text (Whisper), offline text-to-speech (pyttsx3) and saved chat history.
+
+How Streamlit runs this file: the WHOLE script re-executes from top to bottom every time the
+user interacts with the page (types, clicks, uploads). Ordinary variables are therefore reset
+on each run; anything that must survive between runs lives in `st.session_state`, a
+per-browser-tab dictionary (conversation, FAISS index, ids of the last processed files...).
+
+Run with:  streamlit run UIChat.py
+"""
 import os
+import sys
 import json
 import uuid
 import tempfile
+import subprocess
 from datetime import datetime
-from threading import Thread
 
 import streamlit as st
 import speech_recognition as sr
-import pyttsx3
 
-from langchain_ollama import ChatOllama, OllamaEmbeddings
-from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
+from langchain_ollama import ChatOllama
+from langchain_core.messages import HumanMessage, AIMessage
 from langchain_core.chat_history import InMemoryChatMessageHistory
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import FAISS
-os.environ["STREAMLIT_WATCH_FILE_CHANGES"] = "false"
+
+import rag  # document Q&A pipeline: chunking, embeddings, FAISS retrieval, prompt building
 
 # === Constants & Path Setup ===
-HISTORY_DIR = "chat_sessions"
+HISTORY_DIR = "chat_sessions"  # one JSON file per conversation (relative to the working directory)
+# Speech-to-text and text-to-speech run as separate worker processes (see run_whisper / speak)
+WHISPER_WORKER = os.path.join(os.path.dirname(os.path.abspath(__file__)), "whisper_transcribe.py")
+TTS_WORKER = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tts_worker.py")
 os.makedirs(HISTORY_DIR, exist_ok=True)
 
-# === Voice Engine Setup (initialize once) ===
-engine = pyttsx3.init()
-engine.setProperty('rate', 175)
-engine.setProperty('volume', 0.9)
-
 # === Custom CSS for Centered Spinner ===
+# Shown in the middle of the screen while the model is generating an answer
 spinner_css = """
 <style>
 .custom-loader {
@@ -51,47 +61,85 @@ spinner_css = """
 
 # === Utility Functions ===
 def speak(text):
-    """Threaded text-to-speech to prevent UI blocking"""
-    def _speak():
-        try:
-            engine.say(text)
-            engine.runAndWait()
-        except Exception:
-            pass
-    Thread(target=_speak).start()
+    """Speak the text aloud in a background process so the UI is not blocked.
+
+    pyttsx3 runs in its own process (tts_worker.py) because the macOS speech driver
+    produces no audio when called from Streamlit's script thread.
+    """
+    try:
+        proc = subprocess.Popen([sys.executable, TTS_WORKER, "speak"], stdin=subprocess.PIPE, text=True)
+        proc.stdin.write(text)
+        proc.stdin.close()
+    except Exception:
+        pass
 
 def text_to_speech_and_save(text):
-    """Save TTS output as wav and offer download"""
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp:
-        try:
-            engine.stop()
-        except Exception:
-            pass
-        engine.save_to_file(text, tmp.name)
-        engine.runAndWait()
-        st.audio(tmp.name)
-        with open(tmp.name, "rb") as f:
-            st.download_button("Download Audio", f, file_name="response.wav")
+    """Synthesize the text to a WAV file, then show an audio player and a download button.
 
-@st.cache_resource
-def load_offline_whisper(model_name="base"):
-    """Load Whisper model once and cache it in memory for offline use"""
-    import whisper
-    models_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models")
-    os.makedirs(models_dir, exist_ok=True)
-    return whisper.load_model(model_name, download_root=models_dir)
+    Runs the TTS worker synchronously (the player needs the finished file). Temporary files
+    are always removed, and a failure only shows a warning - the chat itself is unaffected.
+    """
+    # Reserve a temp file name for the worker to write into
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".tts") as tmp:
+        raw_path = tmp.name
+    wav_path = raw_path + ".wav"
+    try:
+        subprocess.run([sys.executable, TTS_WORKER, "save", raw_path], input=text, text=True,
+                       check=True, capture_output=True)
+        with open(raw_path, "rb") as f:
+            audio_bytes = f.read()
+        # The macOS speech driver writes AIFF data regardless of the file name; convert it to real WAV
+        if not audio_bytes.startswith(b"RIFF"):
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", raw_path, wav_path],
+                           check=True, capture_output=True)
+            with open(wav_path, "rb") as f:
+                audio_bytes = f.read()
+        st.audio(audio_bytes, format="audio/wav")
+        st.download_button("Download Audio", audio_bytes, file_name="response.wav", mime="audio/wav")
+    except Exception as e:
+        st.warning(f"⚠️ Could not generate audio file: {e}")
+    finally:
+        for path in (raw_path, wav_path):
+            if os.path.exists(path):
+                os.remove(path)
+
+def run_whisper(audio_path, model_name="base"):
+    """Transcribe an audio file offline with Whisper in a separate process.
+
+    Whisper (PyTorch) and FAISS bundle conflicting OpenMP runtimes that abort or deadlock
+    a process that loads both, so Whisper never runs inside the Streamlit process.
+    See whisper_transcribe.py.
+    """
+    # sys.executable = the same Python interpreter (and virtualenv) that runs this app
+    result = subprocess.run(
+        [sys.executable, WHISPER_WORKER, audio_path, model_name],
+        capture_output=True, text=True,
+    )
+    if result.returncode != 0:
+        # The last stderr line is normally the actual error message
+        error_lines = result.stderr.strip().splitlines()
+        raise RuntimeError(error_lines[-1] if error_lines else f"worker exited with code {result.returncode}")
+    # The worker prints its result as JSON on the last line of stdout
+    return json.loads(result.stdout.strip().splitlines()[-1])["text"]
 
 def recognize_speech_and_save():
-    """Voice input, transcribe offline using Whisper, and offer download"""
+    """Record one utterance from the microphone and transcribe it offline with Whisper.
+
+    Returns the transcribed text, or "" if nothing usable was recorded. The transcript is
+    also offered as a .txt download.
+    """
     r = sr.Recognizer()
     mic_names = sr.Microphone.list_microphone_names()
     if not mic_names:
         st.error("❌ No microphones detected")
         return ""
+    # Prefer a device whose name contains "microphone"; otherwise use the first input device
     mic_index = next((i for i, name in enumerate(mic_names) if "microphone" in name.lower()), 0)
     try:
         with sr.Microphone(device_index=mic_index) as source:
             with st.spinner("🎤 Listening..."):
+                # Calibrate the silence threshold, then record until the speaker pauses
+                # (gives up if no speech starts within 8 seconds)
                 r.adjust_for_ambient_noise(source, duration=0.8)
                 audio = r.listen(source, timeout=8)
         with st.spinner("Transcribing speech locally with Whisper..."):
@@ -100,9 +148,7 @@ def recognize_speech_and_save():
                 tmp_wav.write(wav_data)
                 tmp_wav_path = tmp_wav.name
             try:
-                model = load_offline_whisper("base")
-                result = model.transcribe(tmp_wav_path)
-                text = result.get("text", "").strip()
+                text = run_whisper(tmp_wav_path)
             finally:
                 if os.path.exists(tmp_wav_path):
                     os.remove(tmp_wav_path)
@@ -116,27 +162,26 @@ def recognize_speech_and_save():
             return ""
     except sr.WaitTimeoutError:
         st.warning("⌛ Listening timed out")
-    except sr.UnknownValueError:
-        st.warning("❌ Could not understand audio")
     except Exception as e:
         st.error(f"⚠️ Recognition error: {str(e)}")
     return ""
 
 def transcribe_audio_file(file):
-    """Transcribe uploaded audio offline using Whisper"""
+    """Transcribe an uploaded audio file (.mp3/.wav/.m4a) offline with Whisper.
+
+    Returns the text, or "" on failure (the error is shown in the UI).
+    """
     if not file:
         return ""
-    import subprocess
 
-    # Ensure ffmpeg is working
+    # Whisper decodes audio with the ffmpeg command-line tool, so check it is installed first
     try:
         subprocess.run(["ffmpeg", "-version"], check=True, capture_output=True)
     except Exception:
         st.error("❌ FFmpeg is not installed or not in PATH. Please install FFmpeg.")
         return ""
 
-    model = load_offline_whisper("base")
-
+    # Keep the original extension so ffmpeg can recognise the format
     suffix = f".{file.name.split('.')[-1]}" if hasattr(file, "name") and "." in file.name else ".mp3"
     with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
         tmp.write(file.read())
@@ -144,11 +189,11 @@ def transcribe_audio_file(file):
 
     try:
         st.info("🔁 Transcribing offline with Whisper...")
-        result = model.transcribe(tmp_path)
-        if result is None or "text" not in result or not result["text"].strip():
+        text = run_whisper(tmp_path)
+        if not text:
             st.error("❌ Transcription empty or failed.")
             return ""
-        return result["text"].strip()
+        return text
     except Exception as e:
         st.error(f"❌ Whisper Transcription failed: {e}")
         return ""
@@ -158,7 +203,14 @@ def transcribe_audio_file(file):
 
 
 # === Chat History Management ===
+# Each conversation is stored as chat_sessions/<uuid>.json:
+#   {"title": ..., "timestamp": <last update, ISO 8601>, "messages": [{"type": "human"|"ai", "content": ...}]}
+
 def get_all_sessions():
+    """Return all saved conversations, most recently updated first.
+
+    Files that cannot be read or parsed are skipped so one bad file cannot break the sidebar.
+    """
     sessions = []
     if os.path.exists(HISTORY_DIR):
         for filename in os.listdir(HISTORY_DIR):
@@ -173,11 +225,13 @@ def get_all_sessions():
                             'timestamp': session_data.get('timestamp', ''),
                             'messages': session_data.get('messages', [])
                         })
-                except:
+                except Exception:
                     continue
+    # ISO 8601 timestamps sort chronologically as plain strings
     return sorted(sessions, key=lambda x: x['timestamp'], reverse=True)
 
 def save_session(session_id, title, messages):
+    """Write the whole conversation to its JSON file (overwriting the previous version)."""
     filepath = os.path.join(HISTORY_DIR, f"{session_id}.json")
     session_data = {
         'title': title,
@@ -193,39 +247,53 @@ def save_session(session_id, title, messages):
         st.error(f"Error saving session: {e}")
 
 def load_session(session_id):
+    """Return the saved session dict, or None if the file is missing or unreadable."""
     filepath = os.path.join(HISTORY_DIR, f"{session_id}.json")
     if os.path.exists(filepath):
         try:
             with open(filepath, 'r') as f:
                 return json.load(f)
-        except:
+        except Exception:
             return None
     return None
 
 def delete_session(session_id):
+    """Permanently delete a saved conversation."""
     filepath = os.path.join(HISTORY_DIR, f"{session_id}.json")
     if os.path.exists(filepath):
         os.remove(filepath)
 
 def generate_title_from_message(message):
+    """Use the first four words of the first message as the chat title."""
     words = message.split()[:4]
     return " ".join(words) + ("..." if len(message.split()) > 4 else "")
 
+def _supports_chat(ollama_client, model):
+    """Exclude embedding-only models (e.g. nomic-embed-text) from the chat model list"""
+    try:
+        capabilities = ollama_client.show(model).capabilities
+    except Exception:
+        return True  # capability info unavailable (older Ollama) - keep the model
+    return not capabilities or "completion" in capabilities
+
 def get_local_ollama_models():
-    """Discover locally available Ollama models without network calls"""
+    """Discover chat-capable models from the local Ollama server (localhost only)"""
     try:
         import ollama
         response = ollama.list()
+        # Newer ollama clients return an object, older ones a plain dict
         if hasattr(response, 'models'):
             models = [m.model for m in response.models]
         elif isinstance(response, dict):
             models = [m['name'] for m in response.get('models', [])]
         else:
             models = []
+        models = [m for m in models if _supports_chat(ollama, m)]
         if models:
             return models, True
     except Exception:
         pass
+    # Ollama is not reachable: offer a default list so the UI still renders, and report "not connected"
     return ["llama3.2:latest", "llama3.2:3b", "mistral:7b"], False
 
 # === Streamlit UI Setup ===
@@ -276,26 +344,10 @@ st.markdown("""
     <p>Advanced Document Analysis & Chat System</p>
 </div>
 """, unsafe_allow_html=True)
-st.markdown("""
-<style>
-/* Make the chat input bar sticky at the bottom */
-.sticky-chat-input {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: white;
-    padding: 1rem;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-}
-.stChatMessage {
-    margin-bottom: 80px;  /* Prevent last message being hidden */
-}
-</style>
-""", unsafe_allow_html=True)
 
 # === Initialize Session State ===
+# Runs only on the first load of a browser tab; later reruns keep the existing values.
+# chat_history (LangChain) is what is sent to the model; messages is what is displayed and saved.
 if "current_session_id" not in st.session_state:
     st.session_state.current_session_id = str(uuid.uuid4())
 if "chat_history" not in st.session_state:
@@ -303,7 +355,7 @@ if "chat_history" not in st.session_state:
     st.session_state.messages = []
     st.session_state.session_title = "New Chat"
 if "system_prompt" not in st.session_state:
-    st.session_state.system_prompt = "You are a helpful, witty, and concise assistant."
+    st.session_state.system_prompt = rag.DEFAULT_SYSTEM_PROMPT
 if "last_audio_file" not in st.session_state:
     st.session_state.last_audio_file = None
 
@@ -324,7 +376,7 @@ with st.sidebar:
             try:
                 timestamp = datetime.fromisoformat(session['timestamp'])
                 time_str = timestamp.strftime("%b %d, %H:%M")
-            except:
+            except Exception:
                 time_str = "Unknown"
             col1, col2 = st.columns([3, 1])
             with col1:
@@ -332,8 +384,9 @@ with st.sidebar:
                     f"💬 {session['title']}",
                     key=button_key,
                     use_container_width=True,
-                    help=f"Created: {time_str}"
+                    help=f"Last updated: {time_str}"
                 ):
+                    # Rebuild both in-memory histories from the saved file
                     loaded_session = load_session(session['id'])
                     if loaded_session:
                         st.session_state.current_session_id = session['id']
@@ -362,6 +415,7 @@ with st.sidebar:
     else:
         st.markdown("*No chat history yet*")
     st.markdown("### ⚙️ Configuration")
+    # Model list comes from the local Ollama server; embedding-only models are filtered out
     local_models, ollama_connected = get_local_ollama_models()
     if ollama_connected:
         st.caption("🟢 Local Ollama: Connected")
@@ -381,7 +435,7 @@ with st.sidebar:
         <h4>🔐 Security Status</h4>
         <p>• Local Processing Only</p>
         <p>• No Data Transmission</p>
-        <p>• Encrypted Storage</p>
+        <p>• Chats saved as local JSON (unencrypted)</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -395,35 +449,43 @@ with col2:
 
 
 # === Document Processing (Cached Locally) ===
-retriever = None
+# Indexing is expensive, so it only happens when a new file appears; the FAISS index is kept in
+# session state and reused on every later rerun. Removing the file drops the index.
+doc_store = None
 if uploaded_file:
+    # Name + size identifies the upload cheaply (a different file with the same name and size is not detected)
     file_id = f"{uploaded_file.name}_{uploaded_file.size}"
     if "current_doc_id" not in st.session_state or st.session_state.current_doc_id != file_id:
+        st.session_state.pop("doc_store", None)
+        st.session_state.pop("doc_chunks_count", None)
         with st.spinner("📄 Indexing document offline with FAISS..."):
+            # The LangChain loaders read from a file path, so write the upload to a temp file
             with tempfile.NamedTemporaryFile(delete=False, suffix=f".{uploaded_file.name.split('.')[-1]}") as tmp:
                 tmp.write(uploaded_file.getbuffer())
                 file_path = tmp.name
             try:
                 loader = PyPDFLoader(file_path) if uploaded_file.type == "application/pdf" else TextLoader(file_path, encoding="utf-8")
-                docs = loader.load()
-                splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
-                chunks = splitter.split_documents(docs)
-                embeddings = OllamaEmbeddings(model=model_name)
-                db = FAISS.from_documents(chunks, embeddings)
-                st.session_state.doc_retriever = db.as_retriever(search_kwargs={"k": 3})
-                st.session_state.current_doc_id = file_id
-                st.session_state.doc_chunks_count = len(chunks)
+                docs = loader.load()  # PDFs: one Document per page; TXT: one Document
+                # Split into chunks, embed them with nomic-embed-text and build the FAISS index
+                st.session_state.doc_store, st.session_state.doc_chunks_count = rag.build_index(docs)
+            except Exception as e:
+                st.error(f"⚠️ Could not index document: {e}. "
+                         f"Make sure the embedding model is installed: `ollama pull {rag.EMBED_MODEL}`")
             finally:
+                # Mark this file as processed either way so a failure is not retried on every rerun
+                st.session_state.current_doc_id = file_id
                 if os.path.exists(file_path):
                     os.remove(file_path)
-    retriever = st.session_state.get("doc_retriever")
-    st.success(f"✅ Loaded {st.session_state.get('doc_chunks_count', 0)} document chunks")
+    doc_store = st.session_state.get("doc_store")
+    if doc_store:
+        st.success(f"✅ Loaded {st.session_state.get('doc_chunks_count', 0)} document chunks")
 elif "current_doc_id" in st.session_state:
     st.session_state.pop("current_doc_id", None)
-    st.session_state.pop("doc_retriever", None)
+    st.session_state.pop("doc_store", None)
     st.session_state.pop("doc_chunks_count", None)
 
 # === Display Chat Messages ===
+# Redraw the whole conversation on every rerun (Streamlit does not keep earlier output)
 for msg in st.session_state.messages:
     if hasattr(msg, 'type'):
         if msg.type == "human":
@@ -438,7 +500,8 @@ for msg in st.session_state.messages:
                 st.chat_message("assistant", avatar="🤖").markdown(msg.get("content", ""))
 
 # === Input Handling ===
-# Transcribe audio before any UI input interaction
+# Transcribe an uploaded audio file once. Comparing with the last processed upload stops the
+# same file from being transcribed again on every rerun (UploadedFile equality uses its file id).
 transcribed_input = None
 if audio_file and ("last_audio_file" not in st.session_state or st.session_state.last_audio_file != audio_file):
     st.session_state.last_audio_file = audio_file
@@ -450,70 +513,63 @@ elif not audio_file:
     st.session_state.last_audio_file = None
 user_input = None  # initialize early
 
-input_col, voice_col = st.columns([0.85, 0.15])
-# === Sticky Chat Input at Bottom ===
-with st.container():
-    st.markdown('<div class="sticky-chat-input">', unsafe_allow_html=True)
-
-    # Set priority: 1. Audio Transcription, 2. Voice Input, 3. Manual Chat Input
-    if transcribed_input:
-        user_input = transcribed_input
-    elif use_voice_input:
-        if st.button("🎤 Press & Speak", use_container_width=True):
-            user_input = recognize_speech_and_save()
-        else:
-            user_input = ""
-    else:
-        user_input = st.chat_input("🔒 Enter your secure query...")
-
-    st.markdown('</div>', unsafe_allow_html=True)
-
-
-# Final prioritization
+# Set priority: 1. Audio Transcription, 2. Voice Input, 3. Manual Chat Input
+# st.chat_input is called at the top level (not inside a container) so Streamlit pins it to the bottom
 if transcribed_input:
     user_input = transcribed_input
+elif use_voice_input:
+    if st.button("🎤 Press & Speak", use_container_width=True):  # True only on the run right after the click
+        user_input = recognize_speech_and_save()
+else:
+    user_input = st.chat_input("🔒 Enter your secure query...")
 
 # === Chat Processing with Centered Spinner ===
+# 1. record the question  2. retrieve document context  3. call the LLM
+# 4. show + store the answer  5. optional voice output  6. save the conversation to disk
 if user_input:
     st.chat_message("user", avatar="👤").markdown(user_input)
     st.session_state.chat_history.add_user_message(user_input)
     st.session_state.messages.append(HumanMessage(content=user_input))
     if st.session_state.session_title == "New Chat" and len(st.session_state.messages) == 1:
         st.session_state.session_title = generate_title_from_message(user_input)
-    llm = ChatOllama(model=model_name)
+    llm = ChatOllama(model=model_name)  # talks to Ollama at localhost:11434 (POST /api/chat)
     st.markdown(spinner_css, unsafe_allow_html=True)
     spinner_placeholder = st.empty()
     spinner_placeholder.markdown("<div class='custom-loader'></div>", unsafe_allow_html=True)
     try:
-        context = ""
-        if retriever:
+        context_docs = []
+        if doc_store:
+            # Embed the question, find the closest chunks in FAISS and keep the relevant ones.
+            # A retrieval failure is not fatal: the question is answered without document context.
             try:
-                context_docs = retriever.invoke(user_input)
-                context = "\n\n".join([doc.page_content for doc in context_docs])
-                context = f"Document Context:\n{context}\n\n"
+                context_docs = rag.select_context(rag.retrieve(doc_store, user_input))
             except Exception as e:
                 st.error(f"⚠️ Retrieval error: {str(e)}")
-        messages = [SystemMessage(content=st.session_state.system_prompt)] + list(st.session_state.chat_history.messages[:-1])
-        response = llm.invoke(messages + [HumanMessage(content=f"{context}User: {user_input}")])
+        # chat_history already ends with the current question, which build_messages re-adds with context
+        messages = rag.build_messages(st.session_state.system_prompt,
+                                      st.session_state.chat_history.messages[:-1],
+                                      user_input, context_docs)
+        response = llm.invoke(messages)
         spinner_placeholder.empty()  # Remove spinner
         st.chat_message("assistant", avatar="🤖").markdown(response.content)
         st.session_state.chat_history.add_ai_message(response.content)
         st.session_state.messages.append(AIMessage(content=response.content))
         if use_voice_output:
-            text_to_speech_and_save(response.content)
-            speak(response.content)
+            text_to_speech_and_save(response.content)  # audio player + .wav download (waits)
+            speak(response.content)                    # read aloud in the background (does not wait)
         save_session(
             st.session_state.current_session_id,
             st.session_state.session_title,
             st.session_state.messages
         )
     except Exception as e:
+        # Typically Ollama is not running or the model is missing
         spinner_placeholder.empty()
         st.error(f"Error: {e}")
         fallback = "I apologize, but I'm experiencing technical difficulties."
+        # Shown to the user only: storing it would feed a fake reply back to the model as history
         st.chat_message("assistant", avatar="🤖").markdown(fallback)
-        st.session_state.chat_history.add_ai_message(fallback)
-        st.session_state.messages.append(AIMessage(content=fallback))
+        # Still save, so the user's question is not lost
         save_session(
             st.session_state.current_session_id,
             st.session_state.session_title,

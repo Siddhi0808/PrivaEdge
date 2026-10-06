@@ -1,0 +1,92 @@
+{
+  "settings": {
+    "chat_model": "llama3.2:latest",
+    "temperature": 0,
+    "seed": 42,
+    "embed_model": "nomic-embed-text",
+    "chunk_size": 1000,
+    "chunk_overlap": 100,
+    "top_k": 3,
+    "chunks_per_doc": {
+      "kestrel": 10,
+      "northwind": 7,
+      "riverton": 6
+    }
+  },
+  "retrieval": {
+    "dev": {
+      "n": 18,
+      "hit_at_1": 0.8333333333333334,
+      "hit_at_3": 1.0,
+      "mrr_at_3": 0.9074074074074073
+    },
+    "test": {
+      "n": 18,
+      "hit_at_1": 0.7222222222222222,
+      "hit_at_3": 1.0,
+      "mrr_at_3": 0.8333333333333334
+    },
+    "all": {
+      "n": 36,
+      "hit_at_1": 0.7777777777777778,
+      "hit_at_3": 1.0,
+      "mrr_at_3": 0.8703703703703703
+    }
+  },
+  "cutoff": 0.9138559997081757,
+  "tuning": {
+    "objective": 1.0,
+    "best_range": [
+      0.8998019099235535,
+      0.9279100894927979
+    ]
+  },
+  "baseline": {
+    "dev": {
+      "in_doc_accuracy": 1.0,
+      "off_topic_accuracy": 1.0,
+      "overall_accuracy": 1.0,
+      "in_doc_evidence_in_context": 1.0,
+      "off_topic_with_context": 1.0,
+      "off_topic_mentions_document": 0.6666666666666666,
+      "median_latency_s": 7.115,
+      "n_in_doc": 18,
+      "n_off_topic": 6
+    },
+    "test": {
+      "in_doc_accuracy": 1.0,
+      "off_topic_accuracy": 1.0,
+      "overall_accuracy": 1.0,
+      "in_doc_evidence_in_context": 1.0,
+      "off_topic_with_context": 1.0,
+      "off_topic_mentions_document": 0.6666666666666666,
+      "median_latency_s": 7.640000000000001,
+      "n_in_doc": 18,
+      "n_off_topic": 6
+    }
+  },
+  "with_cutoff": {
+    "dev": {
+      "in_doc_accuracy": 1.0,
+      "off_topic_accuracy": 1.0,
+      "overall_accuracy": 1.0,
+      "in_doc_evidence_in_context": 1.0,
+      "off_topic_with_context": 0.0,
+      "off_topic_mentions_document": 0.0,
+      "median_latency_s": 5.385,
+      "n_in_doc": 18,
+      "n_off_topic": 6
+    },
+    "test": {
+      "in_doc_accuracy": 0.8888888888888888,
+      "off_topic_accuracy": 1.0,
+      "overall_accuracy": 0.9166666666666666,
+      "in_doc_evidence_in_context": 0.8888888888888888,
+      "off_topic_with_context": 0.0,
+      "off_topic_mentions_document": 0.0,
+      "median_latency_s": 6.535,
+      "n_in_doc": 18,
+      "n_off_topic": 6
+    }
+  }
+}

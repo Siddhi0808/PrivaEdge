@@ -1,0 +1,54 @@
+RIVERTON MUNICIPAL WATER UTILITY — ANNUAL WATER QUALITY REPORT 2025
+(fictional city and utility; document written for evaluation purposes)
+
+1. A MESSAGE TO OUR CUSTOMERS
+
+This report describes where Riverton's drinking water comes from, how it is treated, what we tested for during the 2025 calendar year and what we found. Riverton Municipal Water Utility serves 184,300 customers through 2,870 kilometres of distribution pipe. The utility is owned by the City of Riverton and is overseen by an elected five-member Water Board. The general manager of the utility is Helena Voss.
+
+2. WHERE YOUR WATER COMES FROM
+
+Riverton has two sources of drinking water. In 2025, 62 percent of our supply came from Lake Merrow, a reservoir 18 kilometres north of the city, and 38 percent came from eleven groundwater wells in the Ashby aquifer on the western edge of the city. The share from the wells rises in late summer, when the level of Lake Merrow falls.
+
+A source water assessment carried out in 2023 rated Lake Merrow as moderately susceptible to contamination from farm run-off and the Ashby aquifer as having low susceptibility.
+
+3. HOW WE TREAT YOUR WATER
+
+Lake water is treated at the Halvern Treatment Plant, which has a design capacity of 48 million litres per day. Treatment consists of coagulation, flocculation, sedimentation, rapid sand filtration, and disinfection with chlorine. In 2025 the plant added an ultraviolet disinfection stage as a second barrier against chlorine-resistant parasites such as Cryptosporidium.
+
+Well water is treated at the Eastbrook Treatment Plant, which has a design capacity of 21 million litres per day. Because the groundwater is naturally hard and contains iron and manganese, Eastbrook uses aeration, greensand filtration and softening before chlorination.
+
+Fluoride is added at both plants to a target concentration of 0.7 milligrams per litre to protect dental health.
+
+4. DEMAND AND PRODUCTION
+
+Average daily demand in 2025 was 52 million litres. Peak day demand was 71 million litres, recorded on 18 July 2025 during a heatwave. On that day both plants operated above 95 percent of their combined capacity and residents were asked to stop lawn watering for four days.
+
+Non-revenue water, meaning water that is produced but not billed because of leaks, theft or metering errors, was 17 percent of production in 2025, down from 21 percent in 2023.
+
+5. WHAT WE FOUND
+
+The utility collected 9,412 samples in 2025 and analysed them for more than 90 regulated substances. All results were below the legal limits except the event described in section 6.
+
+Turbidity, a measure of cloudiness, averaged 0.08 NTU leaving Halvern, against a limit of 0.3 NTU. The highest single turbidity reading was 0.21 NTU on 4 April 2025 after heavy rain.
+
+The average free chlorine level in the distribution system was 0.9 milligrams per litre. Total trihalomethanes, by-products of chlorination, averaged 41 micrograms per litre against a limit of 80. Nitrate in the Ashby wells averaged 3.2 milligrams per litre against a limit of 10.
+
+Lead was measured at 60 homes considered most at risk. The 90th percentile result was 6 micrograms per litre, below the action level of 15. Copper's 90th percentile result was 0.4 milligrams per litre, below its action level of 1.3.
+
+6. VIOLATION AND BOIL WATER NOTICE
+
+On 9 March 2025 a water main broke on Ferris Avenue, causing a loss of pressure in Ward 7. As a precaution the utility issued a boil water notice for Ward 7 that lasted 52 hours. Follow-up sampling found no bacteria and the notice was lifted on 11 March 2025. Because the required notice to the state regulator was filed one day late, the utility received a reporting violation; it was not a water quality violation.
+
+7. LEAD SERVICE LINE REPLACEMENT
+
+Riverton still has lead service lines in older neighbourhoods built before 1950. In 2025 the utility replaced 1,240 lead service lines, bringing the total replaced since the program began in 2019 to 6,815. An estimated 3,900 lead lines remain, and the utility plans to replace all of them by 2030. Replacement is free for homeowners.
+
+8. INVESTMENTS AND RATES
+
+Capital spending in 2025 was 46 million dollars, of which 19 million went to main replacement, 11 million to the Halvern ultraviolet stage, 9 million to lead service line replacement and the rest to meters and pumping stations.
+
+The residential water rate rose by 4.5 percent on 1 January 2025. A typical household using 15 cubic metres per month now pays 58 dollars per month for water and wastewater combined. Low-income customers can apply for a 30 percent discount through the Customer Assistance Program.
+
+9. HOW TO GET INVOLVED
+
+The Water Board meets on the second Wednesday of every month at 18:30 in the council chamber at City Hall, and meetings are open to the public. Questions about this report can be sent to the water quality laboratory, which is open on weekdays from 08:00 to 16:30.

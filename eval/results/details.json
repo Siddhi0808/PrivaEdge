@@ -1,0 +1,2579 @@
+{
+  "retrieval": [
+    {
+      "id": "k01",
+      "doc": "kestrel",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "Who is in charge of the overall system design for Kestrel?",
+      "evidence": "The lead engineer of Project Kestrel is Meera Rao",
+      "answer": [
+        [
+          "meera rao"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.4356386661529541,
+      "distances": [
+        0.4356,
+        0.6091,
+        0.6324
+      ]
+    },
+    {
+      "id": "k02",
+      "doc": "kestrel",
+      "split": "test",
+      "type": "in_doc",
+      "question": "When will Kestrel carry out its first operational survey for a customer?",
+      "evidence": "is 14 March 2031",
+      "answer": [
+        [
+          "march"
+        ],
+        [
+          "14"
+        ],
+        [
+          "2031"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.45007187128067017,
+      "distances": [
+        0.4501,
+        0.5803,
+        0.6531
+      ]
+    },
+    {
+      "id": "k03",
+      "doc": "kestrel",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How far is it from one wingtip of the drone to the other?",
+      "evidence": "wingspan of 3.4 metres",
+      "answer": [
+        [
+          "3.4"
+        ]
+      ],
+      "evidence_rank": 2,
+      "evidence_distance": 0.8172363042831421,
+      "distances": [
+        0.8008,
+        0.8172,
+        0.8211
+      ]
+    },
+    {
+      "id": "k04",
+      "doc": "kestrel",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How long can the drone stay airborne when carrying a full payload?",
+      "evidence": "2 hours and 40 minutes with a full payload",
+      "answer": [
+        [
+          "2 hours and 40",
+          "2 hours 40",
+          "2h 40",
+          "2:40",
+          "160 minutes",
+          "two hours and forty",
+          "2 hours, 40"
+        ]
+      ],
+      "evidence_rank": 2,
+      "evidence_distance": 0.7680917978286743,
+      "distances": [
+        0.7206,
+        0.7681,
+        0.7723
+      ]
+    },
+    {
+      "id": "k05",
+      "doc": "kestrel",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "After how many charging cycles is a battery pack taken out of service?",
+      "evidence": "retired after 300 charge cycles",
+      "answer": [
+        [
+          "300"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.765621542930603,
+      "distances": [
+        0.7656,
+        0.9983,
+        1.0779
+      ]
+    },
+    {
+      "id": "k06",
+      "doc": "kestrel",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What is the resolution of the survey camera?",
+      "evidence": "42-megapixel mapping camera",
+      "answer": [
+        [
+          "42"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.7724944949150085,
+      "distances": [
+        0.7725,
+        0.9445,
+        0.9917
+      ]
+    },
+    {
+      "id": "k07",
+      "doc": "kestrel",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "Where are the long-endurance and water-crossing trials flown?",
+      "evidence": "The secondary site is the Bhigwan reservoir",
+      "answer": [
+        [
+          "bhigwan"
+        ]
+      ],
+      "evidence_rank": 2,
+      "evidence_distance": 0.7511717081069946,
+      "distances": [
+        0.7208,
+        0.7512,
+        0.8083
+      ]
+    },
+    {
+      "id": "k08",
+      "doc": "kestrel",
+      "split": "test",
+      "type": "in_doc",
+      "question": "On what date did airframe K-01 fly for the first time?",
+      "evidence": "took place on 23 October 2029",
+      "answer": [
+        [
+          "23"
+        ],
+        [
+          "october"
+        ],
+        [
+          "2029"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.6032153367996216,
+      "distances": [
+        0.6032,
+        0.7617,
+        0.8003
+      ]
+    },
+    {
+      "id": "k09",
+      "doc": "kestrel",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What horizontal accuracy did the mapping achieve on the reference field?",
+      "evidence": "3.8 centimetres horizontal",
+      "answer": [
+        [
+          "3.8"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.7799001336097717,
+      "distances": [
+        0.7799,
+        0.7855,
+        0.9096
+      ]
+    },
+    {
+      "id": "k10",
+      "doc": "kestrel",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What crosswind limit was set after the hard landing investigation?",
+      "evidence": "reduced from 9 to 7 metres per second",
+      "answer": [
+        [
+          "7 m",
+          "7 metres",
+          "7 meters",
+          "7 m/s",
+          "7m/s",
+          "seven metres",
+          "seven meters"
+        ]
+      ],
+      "evidence_rank": 2,
+      "evidence_distance": 0.7231573462486267,
+      "distances": [
+        0.718,
+        0.7232,
+        0.7567
+      ]
+    },
+    {
+      "id": "k11",
+      "doc": "kestrel",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How much money was approved for the development phase?",
+      "evidence": "38.6 million rupees",
+      "answer": [
+        [
+          "38.6"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.7719361782073975,
+      "distances": [
+        0.7719,
+        0.8717,
+        0.992
+      ]
+    },
+    {
+      "id": "k12",
+      "doc": "kestrel",
+      "split": "test",
+      "type": "in_doc",
+      "question": "Which company supplies the carbon fibre fuselage shells?",
+      "evidence": "supplied by Vayu Composites",
+      "answer": [
+        [
+          "vayu"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.6656303405761719,
+      "distances": [
+        0.6656,
+        0.8821,
+        0.89
+      ]
+    },
+    {
+      "id": "n01",
+      "doc": "northwind",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How many days of paid vacation does an employee get per year?",
+      "evidence": "24 days of paid annual leave",
+      "answer": [
+        [
+          "24"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.6333351135253906,
+      "distances": [
+        0.6333,
+        0.7077,
+        0.827
+      ]
+    },
+    {
+      "id": "n02",
+      "doc": "northwind",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How many unused vacation days can roll over into the next year?",
+      "evidence": "Up to 8 unused days may be carried over",
+      "answer": [
+        [
+          "8",
+          "eight"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.8041700124740601,
+      "distances": [
+        0.8042,
+        0.8803,
+        0.907
+      ]
+    },
+    {
+      "id": "n03",
+      "doc": "northwind",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How much paid leave does the primary caregiver get after a birth or adoption?",
+      "evidence": "26 weeks at full pay for the primary caregiver",
+      "answer": [
+        [
+          "26"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.5757229328155518,
+      "distances": [
+        0.5757,
+        0.8374,
+        0.9207
+      ]
+    },
+    {
+      "id": "n04",
+      "doc": "northwind",
+      "split": "test",
+      "type": "in_doc",
+      "question": "On which days are staff expected to come into the office?",
+      "evidence": "in the office on Tuesdays and Thursdays",
+      "answer": [
+        [
+          "tuesday",
+          "tuesdays"
+        ],
+        [
+          "thursday",
+          "thursdays"
+        ]
+      ],
+      "evidence_rank": 3,
+      "evidence_distance": 0.9188728928565979,
+      "distances": [
+        0.8183,
+        0.8647,
+        0.9189
+      ]
+    },
+    {
+      "id": "n05",
+      "doc": "northwind",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What is the maximum hotel cost per night in Mumbai?",
+      "evidence": "the nightly hotel cap is 9,000 rupees",
+      "answer": [
+        [
+          "9000"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.5090934634208679,
+      "distances": [
+        0.5091,
+        0.9956,
+        1.0382
+      ]
+    },
+    {
+      "id": "n06",
+      "doc": "northwind",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How much is the daily food allowance on trips within India?",
+      "evidence": "domestic travel is 1,800 rupees",
+      "answer": [
+        [
+          "1800"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.495753675699234,
+      "distances": [
+        0.4958,
+        0.8021,
+        0.8163
+      ]
+    },
+    {
+      "id": "n07",
+      "doc": "northwind",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How much can each employee spend on training and courses per year?",
+      "evidence": "annual learning budget of 40,000 rupees",
+      "answer": [
+        [
+          "40000"
+        ]
+      ],
+      "evidence_rank": 3,
+      "evidence_distance": 0.8747689127922058,
+      "distances": [
+        0.7672,
+        0.8366,
+        0.8748
+      ]
+    },
+    {
+      "id": "n08",
+      "doc": "northwind",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How long is the probation period for new hires?",
+      "evidence": "probation period of 6 months",
+      "answer": [
+        [
+          "6 months",
+          "six months",
+          "6-month",
+          "six-month",
+          "6 month",
+          "six month"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.5515688061714172,
+      "distances": [
+        0.5516,
+        0.8274,
+        0.9429
+      ]
+    },
+    {
+      "id": "n09",
+      "doc": "northwind",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What notice period applies to people managers once probation is over?",
+      "evidence": "90 days for people managers",
+      "answer": [
+        [
+          "90"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.4910554885864258,
+      "distances": [
+        0.4911,
+        0.8763,
+        0.9158
+      ]
+    },
+    {
+      "id": "n10",
+      "doc": "northwind",
+      "split": "test",
+      "type": "in_doc",
+      "question": "After how long without activity must a laptop lock itself?",
+      "evidence": "lock automatically after 5 minutes",
+      "answer": [
+        [
+          "5 minutes",
+          "five minutes",
+          "5 min",
+          "5-minute",
+          "five-minute"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.7274954319000244,
+      "distances": [
+        0.7275,
+        1.13,
+        1.1342
+      ]
+    },
+    {
+      "id": "n11",
+      "doc": "northwind",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What is the minimum length for a password?",
+      "evidence": "at least 14 characters long",
+      "answer": [
+        [
+          "14"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.8998019099235535,
+      "distances": [
+        0.8998,
+        1.0238,
+        1.0766
+      ]
+    },
+    {
+      "id": "n12",
+      "doc": "northwind",
+      "split": "test",
+      "type": "in_doc",
+      "question": "In which month is the yearly bonus paid out?",
+      "evidence": "paid in the August payroll",
+      "answer": [
+        [
+          "august"
+        ]
+      ],
+      "evidence_rank": 3,
+      "evidence_distance": 0.9172226190567017,
+      "distances": [
+        0.9006,
+        0.9083,
+        0.9172
+      ]
+    },
+    {
+      "id": "r01",
+      "doc": "riverton",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How many customers does the Riverton water utility serve?",
+      "evidence": "serves 184,300 customers",
+      "answer": [
+        [
+          "184300"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.4906085133552551,
+      "distances": [
+        0.4906,
+        0.6084,
+        0.81
+      ]
+    },
+    {
+      "id": "r02",
+      "doc": "riverton",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What share of the city's water came from the lake in 2025?",
+      "evidence": "62 percent of our supply came from Lake Merrow",
+      "answer": [
+        [
+          "62"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.5410633683204651,
+      "distances": [
+        0.5411,
+        0.6959,
+        0.7387
+      ]
+    },
+    {
+      "id": "r03",
+      "doc": "riverton",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What is the daily design capacity of the plant that treats lake water?",
+      "evidence": "design capacity of 48 million litres per day",
+      "answer": [
+        [
+          "48"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.5215682983398438,
+      "distances": [
+        0.5216,
+        0.6287,
+        0.7573
+      ]
+    },
+    {
+      "id": "r04",
+      "doc": "riverton",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What fluoride concentration does the utility aim for?",
+      "evidence": "target concentration of 0.7 milligrams per litre",
+      "answer": [
+        [
+          "0.7"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.8161836862564087,
+      "distances": [
+        0.8162,
+        0.838,
+        0.8917
+      ]
+    },
+    {
+      "id": "r05",
+      "doc": "riverton",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What was the highest daily water demand recorded in 2025?",
+      "evidence": "Peak day demand was 71 million litres",
+      "answer": [
+        [
+          "71"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.38271963596343994,
+      "distances": [
+        0.3827,
+        0.6295,
+        0.7245
+      ]
+    },
+    {
+      "id": "r06",
+      "doc": "riverton",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What percentage of the water produced was never billed?",
+      "evidence": "was 17 percent of production in 2025",
+      "answer": [
+        [
+          "17"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.6655836701393127,
+      "distances": [
+        0.6656,
+        0.7825,
+        0.8298
+      ]
+    },
+    {
+      "id": "r07",
+      "doc": "riverton",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "Which part of the city had to boil its water after the main break?",
+      "evidence": "boil water notice for Ward 7",
+      "answer": [
+        [
+          "ward 7",
+          "ward seven"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.739859938621521,
+      "distances": [
+        0.7399,
+        0.8423,
+        0.9034
+      ]
+    },
+    {
+      "id": "r08",
+      "doc": "riverton",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How many hours was the boil water notice in effect?",
+      "evidence": "that lasted 52 hours",
+      "answer": [
+        [
+          "52"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.6586964726448059,
+      "distances": [
+        0.6587,
+        0.8166,
+        0.9245
+      ]
+    },
+    {
+      "id": "r09",
+      "doc": "riverton",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How many lead pipes to homes were replaced during 2025?",
+      "evidence": "the utility replaced 1,240 lead service lines",
+      "answer": [
+        [
+          "1240"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.431473970413208,
+      "distances": [
+        0.4315,
+        0.753,
+        0.7776
+      ]
+    },
+    {
+      "id": "r10",
+      "doc": "riverton",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What was the 90th percentile lead level measured in at-risk homes?",
+      "evidence": "The 90th percentile result was 6 micrograms per litre",
+      "answer": [
+        [
+          "6 micrograms",
+          "6 ug",
+          "6 mcg",
+          "6 ppb",
+          "six micrograms",
+          "6 parts per billion"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.6795948147773743,
+      "distances": [
+        0.6796,
+        0.8708,
+        0.9135
+      ]
+    },
+    {
+      "id": "r11",
+      "doc": "riverton",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "Who runs the water utility as general manager?",
+      "evidence": "The general manager of the utility is Helena Voss",
+      "answer": [
+        [
+          "voss"
+        ]
+      ],
+      "evidence_rank": 1,
+      "evidence_distance": 0.7631139755249023,
+      "distances": [
+        0.7631,
+        0.8438,
+        0.9068
+      ]
+    },
+    {
+      "id": "r12",
+      "doc": "riverton",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How much does a typical household pay each month for water and wastewater?",
+      "evidence": "now pays 58 dollars per month",
+      "answer": [
+        [
+          "58"
+        ]
+      ],
+      "evidence_rank": 3,
+      "evidence_distance": 0.8749126195907593,
+      "distances": [
+        0.7988,
+        0.8559,
+        0.8749
+      ]
+    },
+    {
+      "id": "o01",
+      "doc": "kestrel",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "What is the capital city of Japan?",
+      "answer": [
+        [
+          "tokyo"
+        ]
+      ],
+      "distances": [
+        1.2541,
+        1.2597,
+        1.2845
+      ]
+    },
+    {
+      "id": "o02",
+      "doc": "kestrel",
+      "split": "test",
+      "type": "off_topic",
+      "question": "What is the chemical symbol for gold?",
+      "answer": [
+        [
+          "au"
+        ]
+      ],
+      "distances": [
+        1.2864,
+        1.2886,
+        1.2904
+      ]
+    },
+    {
+      "id": "o03",
+      "doc": "kestrel",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "Which is the largest planet in our solar system?",
+      "answer": [
+        [
+          "jupiter"
+        ]
+      ],
+      "distances": [
+        1.0759,
+        1.096,
+        1.1153
+      ]
+    },
+    {
+      "id": "o04",
+      "doc": "kestrel",
+      "split": "test",
+      "type": "off_topic",
+      "question": "Who wrote the play Romeo and Juliet?",
+      "answer": [
+        [
+          "shakespeare"
+        ]
+      ],
+      "distances": [
+        1.187,
+        1.2696,
+        1.2788
+      ]
+    },
+    {
+      "id": "o05",
+      "doc": "northwind",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "At what temperature in Celsius does water boil at sea level?",
+      "answer": [
+        [
+          "100"
+        ]
+      ],
+      "distances": [
+        1.053,
+        1.0834,
+        1.1239
+      ]
+    },
+    {
+      "id": "o06",
+      "doc": "northwind",
+      "split": "test",
+      "type": "off_topic",
+      "question": "What is the square root of 144?",
+      "answer": [
+        [
+          "12",
+          "twelve"
+        ]
+      ],
+      "distances": [
+        1.0635,
+        1.1463,
+        1.1877
+      ]
+    },
+    {
+      "id": "o07",
+      "doc": "northwind",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "Who created the Python programming language?",
+      "answer": [
+        [
+          "guido"
+        ]
+      ],
+      "distances": [
+        1.2081,
+        1.261,
+        1.2763
+      ]
+    },
+    {
+      "id": "o08",
+      "doc": "northwind",
+      "split": "test",
+      "type": "off_topic",
+      "question": "How many sides does a hexagon have?",
+      "answer": [
+        [
+          "6",
+          "six"
+        ]
+      ],
+      "distances": [
+        1.1101,
+        1.1486,
+        1.1629
+      ]
+    },
+    {
+      "id": "o09",
+      "doc": "riverton",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "Which gas do plants absorb from the air for photosynthesis?",
+      "answer": [
+        [
+          "carbon dioxide",
+          "co2"
+        ]
+      ],
+      "distances": [
+        0.9279,
+        1.0003,
+        1.024
+      ]
+    },
+    {
+      "id": "o10",
+      "doc": "riverton",
+      "split": "test",
+      "type": "off_topic",
+      "question": "Which is the largest ocean on Earth?",
+      "answer": [
+        [
+          "pacific"
+        ]
+      ],
+      "distances": [
+        1.1278,
+        1.1782,
+        1.1782
+      ]
+    },
+    {
+      "id": "o11",
+      "doc": "riverton",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "In which year did World War II end?",
+      "answer": [
+        [
+          "1945"
+        ]
+      ],
+      "distances": [
+        1.1041,
+        1.1133,
+        1.1145
+      ]
+    },
+    {
+      "id": "o12",
+      "doc": "riverton",
+      "split": "test",
+      "type": "off_topic",
+      "question": "How many continents are there on Earth?",
+      "answer": [
+        [
+          "7",
+          "seven"
+        ]
+      ],
+      "distances": [
+        1.1744,
+        1.1792,
+        1.1818
+      ]
+    }
+  ],
+  "tuning_curve": [
+    [
+      0.0,
+      0.5,
+      0.0,
+      1.0
+    ],
+    [
+      0.38271963596343994,
+      0.5277777777777778,
+      0.05555555555555555,
+      1.0
+    ],
+    [
+      0.431473970413208,
+      0.5555555555555556,
+      0.1111111111111111,
+      1.0
+    ],
+    [
+      0.4356386661529541,
+      0.5833333333333334,
+      0.16666666666666666,
+      1.0
+    ],
+    [
+      0.4906085133552551,
+      0.6111111111111112,
+      0.2222222222222222,
+      1.0
+    ],
+    [
+      0.4910554885864258,
+      0.6388888888888888,
+      0.2777777777777778,
+      1.0
+    ],
+    [
+      0.5090934634208679,
+      0.6666666666666666,
+      0.3333333333333333,
+      1.0
+    ],
+    [
+      0.5215682983398438,
+      0.6944444444444444,
+      0.3888888888888889,
+      1.0
+    ],
+    [
+      0.5757229328155518,
+      0.7222222222222222,
+      0.4444444444444444,
+      1.0
+    ],
+    [
+      0.6084094047546387,
+      0.7222222222222222,
+      0.4444444444444444,
+      1.0
+    ],
+    [
+      0.6090615391731262,
+      0.7222222222222222,
+      0.4444444444444444,
+      1.0
+    ],
+    [
+      0.6287078857421875,
+      0.7222222222222222,
+      0.4444444444444444,
+      1.0
+    ],
+    [
+      0.6295089721679688,
+      0.7222222222222222,
+      0.4444444444444444,
+      1.0
+    ],
+    [
+      0.632415235042572,
+      0.7222222222222222,
+      0.4444444444444444,
+      1.0
+    ],
+    [
+      0.6333351135253906,
+      0.75,
+      0.5,
+      1.0
+    ],
+    [
+      0.7076579332351685,
+      0.75,
+      0.5,
+      1.0
+    ],
+    [
+      0.7207632064819336,
+      0.75,
+      0.5,
+      1.0
+    ],
+    [
+      0.7244958877563477,
+      0.75,
+      0.5,
+      1.0
+    ],
+    [
+      0.739859938621521,
+      0.7777777777777778,
+      0.5555555555555556,
+      1.0
+    ],
+    [
+      0.7511717081069946,
+      0.8055555555555556,
+      0.6111111111111112,
+      1.0
+    ],
+    [
+      0.7530210018157959,
+      0.8055555555555556,
+      0.6111111111111112,
+      1.0
+    ],
+    [
+      0.7573411464691162,
+      0.8055555555555556,
+      0.6111111111111112,
+      1.0
+    ],
+    [
+      0.7631139755249023,
+      0.8333333333333333,
+      0.6666666666666666,
+      1.0
+    ],
+    [
+      0.765621542930603,
+      0.8611111111111112,
+      0.7222222222222222,
+      1.0
+    ],
+    [
+      0.7671700716018677,
+      0.8611111111111112,
+      0.7222222222222222,
+      1.0
+    ],
+    [
+      0.7719361782073975,
+      0.8888888888888888,
+      0.7777777777777778,
+      1.0
+    ],
+    [
+      0.7776294350624084,
+      0.8888888888888888,
+      0.7777777777777778,
+      1.0
+    ],
+    [
+      0.7799001336097717,
+      0.9166666666666667,
+      0.8333333333333334,
+      1.0
+    ],
+    [
+      0.7855318784713745,
+      0.9166666666666667,
+      0.8333333333333334,
+      1.0
+    ],
+    [
+      0.800840437412262,
+      0.9166666666666667,
+      0.8333333333333334,
+      1.0
+    ],
+    [
+      0.8082917928695679,
+      0.9166666666666667,
+      0.8333333333333334,
+      1.0
+    ],
+    [
+      0.8100165128707886,
+      0.9166666666666667,
+      0.8333333333333334,
+      1.0
+    ],
+    [
+      0.8172363042831421,
+      0.9444444444444444,
+      0.8888888888888888,
+      1.0
+    ],
+    [
+      0.8210891485214233,
+      0.9444444444444444,
+      0.8888888888888888,
+      1.0
+    ],
+    [
+      0.8269728422164917,
+      0.9444444444444444,
+      0.8888888888888888,
+      1.0
+    ],
+    [
+      0.836558997631073,
+      0.9444444444444444,
+      0.8888888888888888,
+      1.0
+    ],
+    [
+      0.8374199867248535,
+      0.9444444444444444,
+      0.8888888888888888,
+      1.0
+    ],
+    [
+      0.8423203825950623,
+      0.9444444444444444,
+      0.8888888888888888,
+      1.0
+    ],
+    [
+      0.8438246250152588,
+      0.9444444444444444,
+      0.8888888888888888,
+      1.0
+    ],
+    [
+      0.8717210292816162,
+      0.9444444444444444,
+      0.8888888888888888,
+      1.0
+    ],
+    [
+      0.8747689127922058,
+      0.9722222222222222,
+      0.9444444444444444,
+      1.0
+    ],
+    [
+      0.8762862682342529,
+      0.9722222222222222,
+      0.9444444444444444,
+      1.0
+    ],
+    [
+      0.8998019099235535,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.9033865928649902,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.9068301320075989,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.9096096158027649,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.9158166646957397,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.9207136631011963,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.9279100894927979,
+      0.9166666666666667,
+      1.0,
+      0.8333333333333334
+    ],
+    [
+      0.9920141696929932,
+      0.9166666666666667,
+      1.0,
+      0.8333333333333334
+    ],
+    [
+      0.9955858588218689,
+      0.9166666666666667,
+      1.0,
+      0.8333333333333334
+    ],
+    [
+      0.9983105659484863,
+      0.9166666666666667,
+      1.0,
+      0.8333333333333334
+    ],
+    [
+      1.0002800226211548,
+      0.9166666666666667,
+      1.0,
+      0.8333333333333334
+    ],
+    [
+      1.0238462686538696,
+      0.9166666666666667,
+      1.0,
+      0.8333333333333334
+    ],
+    [
+      1.0240380764007568,
+      0.9166666666666667,
+      1.0,
+      0.8333333333333334
+    ],
+    [
+      1.0381934642791748,
+      0.9166666666666667,
+      1.0,
+      0.8333333333333334
+    ],
+    [
+      1.0530283451080322,
+      0.8333333333333333,
+      1.0,
+      0.6666666666666666
+    ],
+    [
+      1.0759351253509521,
+      0.75,
+      1.0,
+      0.5
+    ],
+    [
+      1.0765559673309326,
+      0.75,
+      1.0,
+      0.5
+    ],
+    [
+      1.077856183052063,
+      0.75,
+      1.0,
+      0.5
+    ],
+    [
+      1.0834119319915771,
+      0.75,
+      1.0,
+      0.5
+    ],
+    [
+      1.0960237979888916,
+      0.75,
+      1.0,
+      0.5
+    ],
+    [
+      1.1041396856307983,
+      0.6666666666666666,
+      1.0,
+      0.3333333333333333
+    ],
+    [
+      1.1132715940475464,
+      0.6666666666666666,
+      1.0,
+      0.3333333333333333
+    ],
+    [
+      1.1144907474517822,
+      0.6666666666666666,
+      1.0,
+      0.3333333333333333
+    ],
+    [
+      1.1152675151824951,
+      0.6666666666666666,
+      1.0,
+      0.3333333333333333
+    ],
+    [
+      1.1239330768585205,
+      0.6666666666666666,
+      1.0,
+      0.3333333333333333
+    ],
+    [
+      1.2081103324890137,
+      0.5833333333333334,
+      1.0,
+      0.16666666666666666
+    ],
+    [
+      1.2541484832763672,
+      0.5,
+      1.0,
+      0.0
+    ],
+    [
+      1.2597191333770752,
+      0.5,
+      1.0,
+      0.0
+    ],
+    [
+      1.2610193490982056,
+      0.5,
+      1.0,
+      0.0
+    ],
+    [
+      1.2762625217437744,
+      0.5,
+      1.0,
+      0.0
+    ],
+    [
+      1.2844672203063965,
+      0.5,
+      1.0,
+      0.0
+    ],
+    [
+      4.0,
+      0.5,
+      1.0,
+      0.0
+    ]
+  ],
+  "baseline": [
+    {
+      "id": "k01",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "Who is in charge of the overall system design for Kestrel?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, the lead engineer of Project Kestrel, Meera Rao, is responsible for the overall system design for Kestrel.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 4.32
+    },
+    {
+      "id": "k02",
+      "split": "test",
+      "type": "in_doc",
+      "question": "When will Kestrel carry out its first operational survey for a customer?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, Project Kestrel's first operational survey for a customer is planned to take place on 14 March 2031.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 4.23
+    },
+    {
+      "id": "k03",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How far is it from one wingtip of the drone to the other?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, the Kestrel airframe has a wingspan of 3.4 metres. This means that the distance from one wingtip to the other is 3.4 metres.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 5.4
+    },
+    {
+      "id": "k04",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How long can the drone stay airborne when carrying a full payload?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the documentation, the Kestrel drone can stay airborne with a full payload for 2 hours and 40 minutes.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 3.68
+    },
+    {
+      "id": "k05",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "After how many charging cycles is a battery pack taken out of service?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "A battery pack is retired after 300 charge cycles or if its capacity falls below 80% of the rated value, whichever happens first.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 8.19
+    },
+    {
+      "id": "k06",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What is the resolution of the survey camera?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, the standard payload includes a 42-megapixel mapping camera.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 8.63
+    },
+    {
+      "id": "k07",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "Where are the long-endurance and water-crossing trials flown?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The long-endurance and water-crossing trials are flown at the Bhigwan reservoir.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 7.5
+    },
+    {
+      "id": "k08",
+      "split": "test",
+      "type": "in_doc",
+      "question": "On what date did airframe K-01 fly for the first time?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "Airframe K-01 flew for the first time on 23 October 2029.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 8.47
+    },
+    {
+      "id": "k09",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What horizontal accuracy did the mapping achieve on the reference field?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The mapping accuracy achieved on the surveyed reference field at Hampi was 3.8 centimeters horizontal and 6.1 centimeters vertical, which meets the requirement of 5 centimeters horizontal and 10 centimeters vertical.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 19.42
+    },
+    {
+      "id": "k10",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What crosswind limit was set after the hard landing investigation?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The crosswind limit was reduced from 9 to 7 metres per second after the hard landing investigation.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 13.06
+    },
+    {
+      "id": "k11",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How much money was approved for the development phase?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The approved budget for the development phase of Project Kestrel is 38.6 million rupees.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 10.1
+    },
+    {
+      "id": "k12",
+      "split": "test",
+      "type": "in_doc",
+      "question": "Which company supplies the carbon fibre fuselage shells?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The company that supplies the carbon fibre fuselage shells is Vayu Composites of Bengaluru.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 10.56
+    },
+    {
+      "id": "n01",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How many days of paid vacation does an employee get per year?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the documentation, an employee receives 24 days of paid annual leave per calendar year, accrued monthly.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 6.56
+    },
+    {
+      "id": "n02",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How many unused vacation days can roll over into the next year?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the documentation, up to 8 unused days of annual leave can roll over into the next year.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 7.48
+    },
+    {
+      "id": "n03",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How much paid leave does the primary caregiver get after a birth or adoption?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The primary caregiver receives 26 weeks of paid leave at full pay after a birth or adoption.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 4.59
+    },
+    {
+      "id": "n04",
+      "split": "test",
+      "type": "in_doc",
+      "question": "On which days are staff expected to come into the office?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the handbook, staff are expected to come into the office on Tuesdays and Thursdays, which are the designated team days.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 8.62
+    },
+    {
+      "id": "n05",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What is the maximum hotel cost per night in Mumbai?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "In Mumbai, which is a Tier 1 city, the maximum hotel cost per night is 9,000 rupees.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 10.5
+    },
+    {
+      "id": "n06",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How much is the daily food allowance on trips within India?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "For domestic travel, the daily meal allowance (per diem) is 1,800 rupees.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 3.87
+    },
+    {
+      "id": "n07",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How much can each employee spend on training and courses per year?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the documentation, each employee has an annual learning budget of 40,000 rupees that can be used for courses, certifications, books, and conference tickets.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 6.87
+    },
+    {
+      "id": "n08",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How long is the probation period for new hires?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to Section 3 of the Northwind Labs Employee Handbook, the probation period for new hires is 6 months.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 7.8
+    },
+    {
+      "id": "n09",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What notice period applies to people managers once probation is over?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to section 3. PROBATION AND NOTICE, once probation is confirmed, the notice period for people managers becomes 90 days.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 4.1
+    },
+    {
+      "id": "n10",
+      "split": "test",
+      "type": "in_doc",
+      "question": "After how long without activity must a laptop lock itself?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, laptops must lock automatically after 5 minutes of inactivity.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 9.3
+    },
+    {
+      "id": "n11",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What is the minimum length for a password?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to section 9. INFORMATION SECURITY, the minimum length for a password is 14 characters.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 10.07
+    },
+    {
+      "id": "n12",
+      "split": "test",
+      "type": "in_doc",
+      "question": "In which month is the yearly bonus paid out?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, the annual bonus is paid in the August payroll.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 3.55
+    },
+    {
+      "id": "r01",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How many customers does the Riverton water utility serve?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The Riverton Municipal Water Utility serves 184,300 customers.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 4.13
+    },
+    {
+      "id": "r02",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What share of the city's water came from the lake in 2025?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, 62 percent of Riverton's drinking water supply came from Lake Merrow in 2025.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 5.88
+    },
+    {
+      "id": "r03",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What is the daily design capacity of the plant that treats lake water?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The daily design capacity of the plant that treats lake water (Halvern Treatment Plant) is 48 million litres per day.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 6.12
+    },
+    {
+      "id": "r04",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What fluoride concentration does the utility aim for?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, the Riverton Municipal Water Utility aims to add fluoride to the water at a target concentration of 0.7 milligrams per litre to protect dental health.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 5.44
+    },
+    {
+      "id": "r05",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What was the highest daily water demand recorded in 2025?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The highest daily water demand recorded in 2025 was 71 million litres, which occurred on 18 July 2025 during a heatwave.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 9.98
+    },
+    {
+      "id": "r06",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What percentage of the water produced was never billed?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, non-revenue water (water that is produced but not billed because of leaks, theft, or metering errors) was 17 percent of production in 2025.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 8.23
+    },
+    {
+      "id": "r07",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "Which part of the city had to boil its water after the main break?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "Ward 7 had to boil its water after a water main break on Ferris Avenue, which caused a loss of pressure in the area.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 5.77
+    },
+    {
+      "id": "r08",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How many hours was the boil water notice in effect?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The boil water notice was in effect for 52 hours.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 2.96
+    },
+    {
+      "id": "r09",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How many lead pipes to homes were replaced during 2025?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, 1,240 lead service lines were replaced during 2025.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 4.08
+    },
+    {
+      "id": "r10",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What was the 90th percentile lead level measured in at-risk homes?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The 90th percentile lead level measured in at-risk homes was 6 micrograms per litre, which is below the action level of 15 micrograms per litre.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 6.72
+    },
+    {
+      "id": "r11",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "Who runs the water utility as general manager?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, the General Manager of the Riverton Municipal Water Utility is Helena Voss.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 4.47
+    },
+    {
+      "id": "r12",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How much does a typical household pay each month for water and wastewater?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the Riverton Municipal Water Utility's Annual Water Quality Report 2025, a typical household using 15 cubic metres per month pays $58 per month for water and wastewater combined.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 8.71
+    },
+    {
+      "id": "o01",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "What is the capital city of Japan?",
+      "context_chunks": 3,
+      "evidence_in_context": false,
+      "reply": "A sudden change of topic!\n\nThe capital city of Japan is Tokyo.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 8.85
+    },
+    {
+      "id": "o02",
+      "split": "test",
+      "type": "off_topic",
+      "question": "What is the chemical symbol for gold?",
+      "context_chunks": 3,
+      "evidence_in_context": false,
+      "reply": "A sudden change of topic!\n\nThe chemical symbol for gold is Au.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 4.83
+    },
+    {
+      "id": "o03",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "Which is the largest planet in our solar system?",
+      "context_chunks": 3,
+      "evidence_in_context": false,
+      "reply": "It seems like we've taken a detour from the Kestrel drone program!\n\nTo answer your question: The largest planet in our solar system is Jupiter.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 7.36
+    },
+    {
+      "id": "o04",
+      "split": "test",
+      "type": "off_topic",
+      "question": "Who wrote the play Romeo and Juliet?",
+      "context_chunks": 3,
+      "evidence_in_context": false,
+      "reply": "I'd be happy to help you with the information, but I need to clarify that the provided context is about a project called Project Kestrel, and it doesn't seem to be related to the play Romeo and Juliet.\n\nHowever, I can tell you that the play Romeo and Juliet was written by William Shakespeare. Would you like to know more about the play or its author?",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 12.69
+    },
+    {
+      "id": "o05",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "At what temperature in Celsius does water boil at sea level?",
+      "context_chunks": 3,
+      "evidence_in_context": false,
+      "reply": "I'd be happy to help you with the travel and expenses policy, but I'll need to clarify that the question about water boiling temperature seems unrelated to the provided context.\n\nTo answer your question, water boils at 100\u00b0C (212\u00b0F) at sea level.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 14.79
+    },
+    {
+      "id": "o06",
+      "split": "test",
+      "type": "off_topic",
+      "question": "What is the square root of 144?",
+      "context_chunks": 3,
+      "evidence_in_context": false,
+      "reply": "It seems like we took a slight detour from the employee handbook!\n\nTo answer your question: The square root of 144 is 12.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 5.44
+    },
+    {
+      "id": "o07",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "Who created the Python programming language?",
+      "context_chunks": 3,
+      "evidence_in_context": false,
+      "reply": "A break from the employee handbook!\n\nThe Python programming language was created by Guido van Rossum.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 4.57
+    },
+    {
+      "id": "o08",
+      "split": "test",
+      "type": "off_topic",
+      "question": "How many sides does a hexagon have?",
+      "context_chunks": 3,
+      "evidence_in_context": false,
+      "reply": "A break from the employee handbook!\n\nA hexagon has 6 sides.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 2.88
+    },
+    {
+      "id": "o09",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "Which gas do plants absorb from the air for photosynthesis?",
+      "context_chunks": 3,
+      "evidence_in_context": false,
+      "reply": "I think there's been a mix-up! The text you provided is about water quality and treatment, not about plants absorbing gas for photosynthesis.\n\nHowever, I can answer your question: Plants absorb carbon dioxide (CO2) from the air for photosynthesis.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 9.06
+    },
+    {
+      "id": "o10",
+      "split": "test",
+      "type": "off_topic",
+      "question": "Which is the largest ocean on Earth?",
+      "context_chunks": 3,
+      "evidence_in_context": false,
+      "reply": "A sudden change of topic!\n\nThe largest ocean on Earth is the Pacific Ocean, which covers approximately 155.6 million square kilometers (60.1 million square miles) and accounts for approximately 46% of the Earth's total ocean area.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 14.98
+    },
+    {
+      "id": "o11",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "In which year did World War II end?",
+      "context_chunks": 3,
+      "evidence_in_context": false,
+      "reply": "A sudden change of topic!\n\nWorld War II ended in 1945.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 10.12
+    },
+    {
+      "id": "o12",
+      "split": "test",
+      "type": "off_topic",
+      "question": "How many continents are there on Earth?",
+      "context_chunks": 3,
+      "evidence_in_context": false,
+      "reply": "A refreshing change of topic!\n\nThere are 7 continents on Earth:\n\n1. Africa\n2. Antarctica\n3. Asia\n4. Australia\n5. Europe\n6. North America\n7. South America\n\nNow, back to Riverton's water utility report...",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 16.7
+    }
+  ],
+  "with_cutoff": [
+    {
+      "id": "k01",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "Who is in charge of the overall system design for Kestrel?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, the lead engineer of Project Kestrel, Meera Rao, is responsible for the overall system design for Kestrel.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 10.05
+    },
+    {
+      "id": "k02",
+      "split": "test",
+      "type": "in_doc",
+      "question": "When will Kestrel carry out its first operational survey for a customer?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, Project Kestrel's first operational survey for a customer is planned to take place on 14 March 2031.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 10.59
+    },
+    {
+      "id": "k03",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How far is it from one wingtip of the drone to the other?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, the Kestrel airframe has a wingspan of 3.4 metres. This means that the distance from one wingtip to the other is 3.4 metres.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 6.98
+    },
+    {
+      "id": "k04",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How long can the drone stay airborne when carrying a full payload?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the documentation, the Kestrel drone can stay airborne with a full payload for 2 hours and 40 minutes.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 8.58
+    },
+    {
+      "id": "k05",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "After how many charging cycles is a battery pack taken out of service?",
+      "context_chunks": 1,
+      "evidence_in_context": true,
+      "reply": "According to the documentation, a battery pack is retired after 300 charge cycles or if its capacity falls below 80% of the rated value, whichever happens first.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 5.44
+    },
+    {
+      "id": "k06",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What is the resolution of the survey camera?",
+      "context_chunks": 1,
+      "evidence_in_context": true,
+      "reply": "The resolution of the survey camera is not explicitly stated in the provided context. However, we can infer that it's a 42-megapixel camera, which is a relatively high resolution for a mapping camera.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 6.49
+    },
+    {
+      "id": "k07",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "Where are the long-endurance and water-crossing trials flown?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The long-endurance and water-crossing trials are flown at the Bhigwan reservoir.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 6.38
+    },
+    {
+      "id": "k08",
+      "split": "test",
+      "type": "in_doc",
+      "question": "On what date did airframe K-01 fly for the first time?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "Airframe K-01 flew for the first time on 23 October 2029.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 8.06
+    },
+    {
+      "id": "k09",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What horizontal accuracy did the mapping achieve on the reference field?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The mapping accuracy achieved on the surveyed reference field at Hampi was 3.8 centimeters horizontal and 6.1 centimeters vertical, which meets the requirement of 5 centimeters horizontal and 10 centimeters vertical.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 11.21
+    },
+    {
+      "id": "k10",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What crosswind limit was set after the hard landing investigation?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The crosswind limit was reduced from 9 to 7 metres per second after the hard landing investigation.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 4.36
+    },
+    {
+      "id": "k11",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How much money was approved for the development phase?",
+      "context_chunks": 2,
+      "evidence_in_context": true,
+      "reply": "The approved budget for the development phase of Project Kestrel is 38.6 million rupees.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 4.22
+    },
+    {
+      "id": "k12",
+      "split": "test",
+      "type": "in_doc",
+      "question": "Which company supplies the carbon fibre fuselage shells?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The company that supplies the carbon fibre fuselage shells is Vayu Composites of Bengaluru.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 9.46
+    },
+    {
+      "id": "n01",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How many days of paid vacation does an employee get per year?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the documentation, an employee receives 24 days of paid annual leave per calendar year, accrued monthly.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 5.46
+    },
+    {
+      "id": "n02",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How many unused vacation days can roll over into the next year?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the documentation, up to 8 unused days of annual leave can roll over into the next year.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 6.46
+    },
+    {
+      "id": "n03",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How much paid leave does the primary caregiver get after a birth or adoption?",
+      "context_chunks": 2,
+      "evidence_in_context": true,
+      "reply": "The primary caregiver receives 26 weeks of paid leave after a birth or adoption, at full pay.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 3.53
+    },
+    {
+      "id": "n04",
+      "split": "test",
+      "type": "in_doc",
+      "question": "On which days are staff expected to come into the office?",
+      "context_chunks": 2,
+      "evidence_in_context": false,
+      "reply": "According to the handbook, the standard working week is 40 hours, Monday to Friday. However, there is no specific mention of days when staff are expected to come into the office. It only mentions core collaboration hours, which are 11:00 to 16:00 local time, but it doesn't specify whether staff are expected to be present during these hours or not.",
+      "correct": false,
+      "mentions_document": true,
+      "latency_s": 13.1
+    },
+    {
+      "id": "n05",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What is the maximum hotel cost per night in Mumbai?",
+      "context_chunks": 1,
+      "evidence_in_context": true,
+      "reply": "In Mumbai, which is a Tier 1 city, the maximum hotel cost per night is 9,000 rupees.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 4.91
+    },
+    {
+      "id": "n06",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How much is the daily food allowance on trips within India?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "For domestic travel, the daily meal allowance (per diem) is 1,800 rupees.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 8.23
+    },
+    {
+      "id": "n07",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How much can each employee spend on training and courses per year?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the documentation, each employee has an annual learning budget of 40,000 rupees that can be used for courses, certifications, books, and conference tickets.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 5.33
+    },
+    {
+      "id": "n08",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How long is the probation period for new hires?",
+      "context_chunks": 2,
+      "evidence_in_context": true,
+      "reply": "According to the handbook, the probation period for new hires at Northwind Labs is 6 months.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 3.72
+    },
+    {
+      "id": "n09",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What notice period applies to people managers once probation is over?",
+      "context_chunks": 2,
+      "evidence_in_context": true,
+      "reply": "According to the document, once probation is confirmed, the notice period for people managers becomes 90 days.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 3.25
+    },
+    {
+      "id": "n10",
+      "split": "test",
+      "type": "in_doc",
+      "question": "After how long without activity must a laptop lock itself?",
+      "context_chunks": 1,
+      "evidence_in_context": true,
+      "reply": "According to the documentation, a laptop must lock automatically after 5 minutes of inactivity.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 3.9
+    },
+    {
+      "id": "n11",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What is the minimum length for a password?",
+      "context_chunks": 1,
+      "evidence_in_context": true,
+      "reply": "According to the documentation, the minimum length for a password is 14 characters.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 2.43
+    },
+    {
+      "id": "n12",
+      "split": "test",
+      "type": "in_doc",
+      "question": "In which month is the yearly bonus paid out?",
+      "context_chunks": 2,
+      "evidence_in_context": false,
+      "reply": "Unfortunately, the provided documentation does not mention the payment schedule for the yearly bonus.",
+      "correct": false,
+      "mentions_document": true,
+      "latency_s": 2.65
+    },
+    {
+      "id": "r01",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How many customers does the Riverton water utility serve?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The Riverton Municipal Water Utility serves 184,300 customers.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 9.63
+    },
+    {
+      "id": "r02",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What share of the city's water came from the lake in 2025?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, 62 percent of Riverton's drinking water supply came from Lake Merrow in 2025.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 11.52
+    },
+    {
+      "id": "r03",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What is the daily design capacity of the plant that treats lake water?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The daily design capacity of the plant that treats lake water (Halvern Treatment Plant) is 48 million litres per day.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 10.92
+    },
+    {
+      "id": "r04",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What fluoride concentration does the utility aim for?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, the Riverton Municipal Water Utility aims to add fluoride to the water at a target concentration of 0.7 milligrams per litre to protect dental health.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 7.95
+    },
+    {
+      "id": "r05",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "What was the highest daily water demand recorded in 2025?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The highest daily water demand recorded in 2025 was 71 million litres, which occurred on 18 July 2025 during a heatwave.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 8.49
+    },
+    {
+      "id": "r06",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What percentage of the water produced was never billed?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, non-revenue water (water that is produced but not billed because of leaks, theft, or metering errors) was 17 percent of production in 2025.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 7.83
+    },
+    {
+      "id": "r07",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "Which part of the city had to boil its water after the main break?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "Ward 7 had to boil its water after a water main break on Ferris Avenue, which caused a loss of pressure in the area.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 5.14
+    },
+    {
+      "id": "r08",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How many hours was the boil water notice in effect?",
+      "context_chunks": 2,
+      "evidence_in_context": true,
+      "reply": "The boil water notice was in effect for 52 hours.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 2.68
+    },
+    {
+      "id": "r09",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "How many lead pipes to homes were replaced during 2025?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, 1,240 lead service lines were replaced during 2025.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 4.37
+    },
+    {
+      "id": "r10",
+      "split": "test",
+      "type": "in_doc",
+      "question": "What was the 90th percentile lead level measured in at-risk homes?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "The 90th percentile lead level measured in at-risk homes was 6 micrograms per litre, which is below the action level of 15 micrograms per litre.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 6.58
+    },
+    {
+      "id": "r11",
+      "split": "dev",
+      "type": "in_doc",
+      "question": "Who runs the water utility as general manager?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the document, the General Manager of the Riverton Municipal Water Utility is Helena Voss.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 3.57
+    },
+    {
+      "id": "r12",
+      "split": "test",
+      "type": "in_doc",
+      "question": "How much does a typical household pay each month for water and wastewater?",
+      "context_chunks": 3,
+      "evidence_in_context": true,
+      "reply": "According to the Riverton Municipal Water Utility's Annual Water Quality Report 2025, a typical household using 15 cubic metres per month pays $58 per month for water and wastewater combined.",
+      "correct": true,
+      "mentions_document": true,
+      "latency_s": 9.53
+    },
+    {
+      "id": "o01",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "What is the capital city of Japan?",
+      "context_chunks": 0,
+      "evidence_in_context": false,
+      "reply": "The capital city of Japan is Tokyo.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 1.74
+    },
+    {
+      "id": "o02",
+      "split": "test",
+      "type": "off_topic",
+      "question": "What is the chemical symbol for gold?",
+      "context_chunks": 0,
+      "evidence_in_context": false,
+      "reply": "The chemical symbol for gold is Au.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 1.98
+    },
+    {
+      "id": "o03",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "Which is the largest planet in our solar system?",
+      "context_chunks": 0,
+      "evidence_in_context": false,
+      "reply": "That would be Jupiter! It's a gas giant, with a diameter of approximately 142,984 kilometers (88,846 miles). That's more than 11 times the diameter of Earth!",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 6.36
+    },
+    {
+      "id": "o04",
+      "split": "test",
+      "type": "off_topic",
+      "question": "Who wrote the play Romeo and Juliet?",
+      "context_chunks": 0,
+      "evidence_in_context": false,
+      "reply": "A classic question! The play Romeo and Juliet was written by the renowned English playwright William Shakespeare.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 3.43
+    },
+    {
+      "id": "o05",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "At what temperature in Celsius does water boil at sea level?",
+      "context_chunks": 0,
+      "evidence_in_context": false,
+      "reply": "A simple yet essential question! At sea level, water boils at 100\u00b0C (212\u00b0F).",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 3.97
+    },
+    {
+      "id": "o06",
+      "split": "test",
+      "type": "off_topic",
+      "question": "What is the square root of 144?",
+      "context_chunks": 0,
+      "evidence_in_context": false,
+      "reply": "The square root of 144 is 12.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 1.95
+    },
+    {
+      "id": "o07",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "Who created the Python programming language?",
+      "context_chunks": 0,
+      "evidence_in_context": false,
+      "reply": "Python was created by Guido van Rossum, a Dutch computer programmer. He began working on Python in the late 1980s and released the first version, Python 0.9.1, in 1991.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 7.16
+    },
+    {
+      "id": "o08",
+      "split": "test",
+      "type": "off_topic",
+      "question": "How many sides does a hexagon have?",
+      "context_chunks": 0,
+      "evidence_in_context": false,
+      "reply": "A hexagon by definition has 6 sides.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 1.96
+    },
+    {
+      "id": "o09",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "Which gas do plants absorb from the air for photosynthesis?",
+      "context_chunks": 0,
+      "evidence_in_context": false,
+      "reply": "Carbon dioxide (CO2) is the gas that plants absorb from the air for photosynthesis.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 3.92
+    },
+    {
+      "id": "o10",
+      "split": "test",
+      "type": "off_topic",
+      "question": "Which is the largest ocean on Earth?",
+      "context_chunks": 0,
+      "evidence_in_context": false,
+      "reply": "The largest ocean on Earth is the Pacific Ocean, covering approximately 155.6 million square kilometers (60.1 million square miles).",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 5.0
+    },
+    {
+      "id": "o11",
+      "split": "dev",
+      "type": "off_topic",
+      "question": "In which year did World War II end?",
+      "context_chunks": 0,
+      "evidence_in_context": false,
+      "reply": "A question that marks the end of a tumultuous era! World War II officially ended in 1945. The war in Europe ended on May 8, 1945 (V-E Day), and the war in the Pacific ended on September 2, 1945, with the formal surrender of Japan.",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 10.29
+    },
+    {
+      "id": "o12",
+      "split": "test",
+      "type": "off_topic",
+      "question": "How many continents are there on Earth?",
+      "context_chunks": 0,
+      "evidence_in_context": false,
+      "reply": "A question that's easy to navigate! There are 7 continents on Earth:\n\n1. Africa\n2. Antarctica\n3. Asia\n4. Australia\n5. Europe\n6. North America\n7. South America\n\n(Note: Some sources may group Europe and Asia together as a single continent, Eurasia, but the 7-continent model is the most widely accepted.)",
+      "correct": true,
+      "mentions_document": false,
+      "latency_s": 16.39
+    }
+  ]
+}

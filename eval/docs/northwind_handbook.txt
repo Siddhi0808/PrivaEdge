@@ -1,0 +1,68 @@
+NORTHWIND LABS — EMPLOYEE HANDBOOK 2026
+(fictional company; document written for evaluation purposes)
+
+1. ABOUT THIS HANDBOOK
+
+This handbook explains the policies that apply to all permanent employees of Northwind Labs. Contractors and interns have separate agreements, although the code of conduct and the information security rules in this handbook apply to them as well. If anything in this handbook conflicts with your employment contract, the contract takes precedence. Questions should go to the People Operations team at the Hyderabad office.
+
+2. WORKING HOURS
+
+The standard working week is 40 hours, Monday to Friday. Core collaboration hours are 11:00 to 16:00 local time; outside those hours employees may arrange their schedule with their manager. Overtime must be approved in advance by a manager and is compensated as time off in lieu at a rate of one hour off for every hour worked, to be used within three months.
+
+3. PROBATION AND NOTICE
+
+New employees serve a probation period of 6 months. During probation the notice period on either side is two weeks. After probation is confirmed, the notice period becomes 60 days for individual contributors and 90 days for people managers. Notice may be shortened by mutual agreement.
+
+4. LEAVE
+
+Every permanent employee receives 24 days of paid annual leave per calendar year, accrued monthly. Up to 8 unused days may be carried over into the next year; any further unused days lapse on 31 March.
+
+Sick leave is separate from annual leave. Employees receive 10 days of paid sick leave per year; absences of more than two consecutive days require a doctor's note. Unused sick leave does not carry over.
+
+Parental leave is 26 weeks at full pay for the primary caregiver and 4 weeks at full pay for the secondary caregiver, regardless of gender. Parental leave can be taken in up to three blocks within the first year after the birth or adoption.
+
+Employees may take 3 days of paid bereavement leave for the loss of an immediate family member, and 1 day of paid leave per year for volunteering with a registered charity.
+
+5. REMOTE AND HYBRID WORK
+
+Northwind is a hybrid company. Employees are expected to be in the office on Tuesdays and Thursdays, which are the designated team days. Other days can be worked remotely from anywhere in India. Working from outside India requires approval from People Operations and is limited to 30 days per year because of tax rules.
+
+A one-time home office allowance of 25,000 rupees is paid after probation is confirmed. An internet allowance of 1,500 rupees per month is paid to all employees who work remotely at least two days a week.
+
+6. TRAVEL AND EXPENSES
+
+Business travel must be booked through the company travel portal. Flights of under four hours are booked in economy class; flights of four hours or longer may be booked in premium economy. Business class is never reimbursed.
+
+Hotel limits depend on the city tier. In Tier 1 cities (Mumbai, Delhi, Bengaluru) the nightly hotel cap is 9,000 rupees. In Tier 2 cities the cap is 6,000 rupees per night, and in all other locations it is 4,500 rupees per night. International hotel caps are listed on the travel portal.
+
+The daily meal allowance (per diem) for domestic travel is 1,800 rupees. For international travel the per diem is 60 US dollars. Alcohol is never reimbursed. Expense claims must be submitted within 30 days of the end of the trip, with receipts for any single item above 500 rupees.
+
+7. LEARNING AND DEVELOPMENT
+
+Each employee has an annual learning budget of 40,000 rupees that can be used for courses, certifications, books and conference tickets. Conference travel is paid from the travel budget, not the learning budget. Unused learning budget does not carry over. Employees are also entitled to 5 learning days per year that do not count against annual leave.
+
+8. EQUIPMENT
+
+Every employee receives a laptop on their first day. Engineers receive a 16-inch laptop with 32 gigabytes of memory; all other roles receive a 14-inch laptop with 16 gigabytes. Laptops are replaced every 3 years, or earlier if repair is not economical. A second monitor and a headset can be ordered through the IT portal.
+
+Lost or stolen equipment must be reported to the IT service desk within 24 hours.
+
+9. INFORMATION SECURITY
+
+All laptops use full-disk encryption and must lock automatically after 5 minutes of inactivity. Passwords must be at least 14 characters long. Passwords no longer have to be changed on a fixed schedule; they must be changed immediately if a compromise is suspected. Multi-factor authentication is mandatory for email, source code and the HR system.
+
+Customer data may only be stored in approved systems. Copying customer data to personal devices or personal cloud storage is a dismissible offence. Security incidents must be reported to the security team at once through the incident channel.
+
+10. CODE OF CONDUCT
+
+Northwind expects every employee to treat colleagues, customers and partners with respect. Harassment and discrimination of any kind are not tolerated. Concerns can be raised with a manager, with People Operations, or anonymously through the ethics hotline, which is run by an independent provider.
+
+Gifts from suppliers or customers worth more than 2,000 rupees must be declared to People Operations within one week.
+
+11. PERFORMANCE REVIEWS AND PAY
+
+Performance reviews take place twice a year, in April and October. Salary changes are decided once a year and take effect on 1 July. The annual bonus, if any, is paid in the August payroll and depends on company results and individual performance.
+
+12. BENEFITS
+
+All employees are covered by group health insurance of 7 lakh rupees per year for themselves, their spouse or partner, and up to two children. Parents can be added at the employee's cost. Term life insurance of three times annual base salary is provided at no cost. The company contributes to the provident fund as required by law.

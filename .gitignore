@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+myenv/
+venv/
+.venv/
+
+# Local Whisper model cache (downloaded on first use)
+models/
+
+# Personal chat history written at runtime
+chat_sessions/
+
+# Editor / OS / tooling
+.DS_Store
+.claude/
