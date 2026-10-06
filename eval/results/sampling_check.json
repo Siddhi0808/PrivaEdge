@@ -1,0 +1,1951 @@
+{
+  "summary": {
+    "cutoff": 0.9138559997081757,
+    "repeats_off_topic": 5,
+    "baseline": {
+      "off_topic_n": 60,
+      "off_topic_accuracy": 0.9333333333333333,
+      "off_topic_mentions_document": 0.5833333333333334,
+      "in_doc_n": 36,
+      "in_doc_accuracy": 1.0,
+      "wrong_off_topic_examples": [
+        "Back to the Kestrel project!\n\nUnfortunately, there is no information about the capital city of Japan in the provided context. The text only discusses the Kestrel project, specifically its payload, tes",
+        "I'm happy to help with your question, but I need to clarify that the provided text doesn't mention Japan or any information related to Japan. The text appears to be related to a drone-based survey pro",
+        "Back to the Kestrel program!\n\nUnfortunately, that information doesn't seem to be related to the Kestrel program. The question about the largest planet in our solar system is a completely different top",
+        "I think there might be some confusion! This conversation is about water quality and treatment, not about plants absorbing gas for photosynthesis. If you'd like to know about the treatment process of R"
+      ]
+    },
+    "with_cutoff": {
+      "off_topic_n": 60,
+      "off_topic_accuracy": 0.9833333333333333,
+      "off_topic_mentions_document": 0.0,
+      "in_doc_n": 36,
+      "in_doc_accuracy": 0.9444444444444444,
+      "wrong_off_topic_examples": [
+        "The answer is: Oxygen."
+      ]
+    }
+  },
+  "records": [
+    {
+      "config": "baseline",
+      "id": "k01",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the document, the lead engineer of Project Kestrel, Meera Rao, is responsible for the overall system design of Kestrel.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "k02",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the document, Project Kestrel, meaning the first operational survey for a customer, is scheduled to launch on 14 March 2031.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "k03",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the document, the Kestrel airframe has a wingspan of 3.4 metres. This means that the distance from one wingtip to the other is 3.4 metres.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "k04",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the documentation, the drone (Kestrel) can stay airborne for 2 hours and 40 minutes when carrying a full payload.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "k05",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "A battery pack is retired after 300 charge cycles, or if its capacity falls below 80 percent of the rated value, whichever happens first.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "k06",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The resolution of the survey camera is not explicitly stated in the provided document. However, it's mentioned that the camera is a 42-megapixel mapping camera.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "k07",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The long-endurance and water-crossing trials are flown at the Bhigwan reservoir.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "k08",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "Airframe K-01 made its first flight on 23 October 2029 at the Hampi test site.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "k09",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "On the surveyed reference field at Hampi, the mapping achieved a horizontal accuracy of 3.8 centimeters, meeting the requirement of 5 centimeters.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "k10",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "After the hard landing investigation, the crosswind limit was reduced from 9 to 7 metres per second.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "k11",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The approved budget for the development phase is 38.6 million rupees.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "k12",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "Vayu Composites of Bengaluru supplies the carbon fibre fuselage shells.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "n01",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the documentation, permanent employees receive 24 days of paid annual leave per calendar year.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "n02",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the documentation, up to 8 unused annual leave days can roll over into the next year, but only up to a maximum of 8 days.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "n03",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The primary caregiver receives 26 weeks of paid leave after a birth or adoption, and the secondary caregiver receives 4 weeks of paid leave.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "n04",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to Section 5 of the Northwind Labs Employee Handbook:\n\n\"Staff are expected to be in the office on:\n\n* Tuesdays\n* Thursdays (designated team days)\n\nOther days can be worked remotely from anywhere in India.\"",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "n05",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The maximum hotel cost per night in Tier 1 cities like Mumbai is 9,000 rupees.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "n06",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "For domestic travel within India, the daily meal allowance (per diem) is 1,800 rupees.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "n07",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the document, each employee has an annual learning budget of 40,000 rupees that can be used for courses, certifications, books, and conference tickets.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "n08",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to Section 3. PROBATION AND NOTICE of the employee handbook, the probation period for new hires is 6 months.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "n09",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to Section 3 of the Northwind Labs Employee Handbook, the notice period for people managers is 90 days after their probation is confirmed.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "n10",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the document, laptops lock automatically after 5 minutes of inactivity.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "n11",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The minimum length for a password is 14 characters, as stated in section 9. INFORMATION SECURITY.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "n12",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the documentation, the annual bonus is paid out in the August payroll.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "r01",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The Riverton Municipal Water Utility serves 184,300 customers.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "r02",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the document, 62 percent of Riverton's drinking water supply in 2025 came from Lake Merrow.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "r03",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The daily design capacity of the plant that treats lake water (Halvern Treatment Plant) is 48 million litres per day.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "r04",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The Riverton Municipal Water Utility aims for a fluoride concentration of 0.7 milligrams per litre in the drinking water to protect dental health.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "r05",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The highest daily water demand recorded in 2025 was 71 million litres, which occurred on July 18, 2025, during a heatwave, when both plants operated above 95 percent of their combined capacity.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "r06",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to section 4 of the document, non-revenue water (water that is produced but not billed) was 17% of production in 2025.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "r07",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "Ward 7 had to boil its water after a main break on Ferris Avenue on March 9, 2025.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "r08",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The boil water notice in Ward 7 was in effect for 52 hours.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "r09",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to Section 7, LEAD SERVICE LINE REPLACEMENT, 1,240 lead service lines were replaced in 2025, bringing the total replaced since the program began in 2019 to 6,815.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "r10",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The 90th percentile lead level was measured at 6 micrograms per litre, which is below the action level of 15.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "r11",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the Riverton Municipal Water Utility Annual Water Quality Report 2025, the General Manager of the utility is Helena Voss.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "r12",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the document, a typical household in Riverton pays $58 per month for water and wastewater combined.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o01",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "Back to the Kestrel project!\n\nUnfortunately, there is no information about the capital city of Japan in the provided context. The text only discusses the Kestrel project, specifically its payload, test sites, suppliers, safety rules, test results, and incidents. If you're looking for information about Japan, you might want to check a different source. Would you like me to help with something else?",
+      "correct": false,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o01",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 3,
+      "reply": "It looks like we've taken a bit of a detour!\n\nThe capital city of Japan is Tokyo.\n\nWould you like to return to the payload document context or ask a question related to the Kestrel project?",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o01",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 3,
+      "reply": "I'm happy to help with your question, but I need to clarify that the provided text doesn't mention Japan or any information related to Japan. The text appears to be related to a drone-based survey program, discussing topics like payload, test sites, suppliers, safety rules, and test results.\n\nIf you could provide more context or clarify your question, I'd be happy to help. Alternatively, if you're looking for the capital city of Japan, I can provide that information for you!",
+      "correct": false,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o01",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 3,
+      "reply": "Sorry to hear that you're not talking about the Kestrel program anymore!\n\nTo answer your question, the capital city of Japan is Tokyo. Would you like to go back to the Kestrel program or is there something else I can help you with?",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o01",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 3,
+      "reply": "A sudden change of topic!\n\nThe capital city of Japan is Tokyo.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o02",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "A sudden change of topic!\n\nThe chemical symbol for gold is Au.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o02",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 3,
+      "reply": "A nice change of pace from drones!\n\nThe chemical symbol for gold is Au.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o02",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 3,
+      "reply": "A sudden change of topic!\n\nThe chemical symbol for gold is Au.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o02",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 3,
+      "reply": "A sudden shift from drone payloads to chemistry!\n\nThe chemical symbol for gold is Au.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o02",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 3,
+      "reply": "A sudden change of topic!\n\nThe chemical symbol for gold is Au.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o03",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "Back to the Kestrel program!\n\nUnfortunately, that information doesn't seem to be related to the Kestrel program. The question about the largest planet in our solar system is a completely different topic.\n\nWould you like to ask a question about the Kestrel program, or would you like me to summarize some specific information about the program? I'm here to help!",
+      "correct": false,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o03",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 3,
+      "reply": "It looks like we've drifted off topic!\n\nTo answer your question: The largest planet in our solar system is Jupiter.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o03",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 3,
+      "reply": "It seems like we took a detour from the Kestrel drone project!\n\nTo answer your question, the largest planet in our solar system is Jupiter. Would you like to return to the Kestrel drone project or discuss Jupiter further?",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o03",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 3,
+      "reply": "It seems like you've wandered into an entirely different topic!\n\nTo answer your question, the largest planet in our solar system is Jupiter.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o03",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 3,
+      "reply": "It seems we've strayed quite far from the original topic!\n\nThe largest planet in our solar system is Jupiter. Would you like to return to the context of the Kestrel aircraft or discuss something else?",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o04",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "It seems like you've taken a dramatic turn from discussing Project Kestrel!\n\nThe play Romeo and Juliet was written by William Shakespeare. Would you like to know more about the play or return to discussing Project Kestrel?",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o04",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 3,
+      "reply": "It seems like we've taken a dramatic detour!\n\nTo answer your question, the play Romeo and Juliet was written by William Shakespeare. Would you like me to get back to the technical details of Project Kestrel, or is there anything else I can help you with?",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o04",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 3,
+      "reply": "Unfortunately, I don't have any information about the author of the play Romeo and Juliet within the provided context. However, I can tell you that the play Romeo and Juliet was written by William Shakespeare.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o04",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 3,
+      "reply": "A sudden change of topic!\n\nThe play Romeo and Juliet was written by William Shakespeare.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o04",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 3,
+      "reply": "I'm happy to help, but I'm not sure if you're interested in the answer to that question. If you are, I can certainly provide it.\n\nHowever, it appears that we were in the middle of discussing a project and its details. If you'd like, I can continue answering your questions about Project Kestrel.\n\nTo answer your question about Romeo and Juliet, it was written by William Shakespeare.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o05",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "I'm happy to help with the travel policy question, but I'll also answer the temperature question as it seems unrelated to the provided document.\n\nAt sea level, water boils at 100\u00b0C (212\u00b0F).",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o05",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 3,
+      "reply": "However, I don't see a question about temperature in the provided context. The context appears to be about company policies and travel expenses.\n\nIf you'd like, I can try to answer the temperature question for you. \n\nThe boiling point of water is 100\u00b0C (212\u00b0F) at sea level.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o05",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 3,
+      "reply": "I'm happy to help you, but it seems like we're in the middle of a fictional company handbook, and the temperature of water boiling at sea level is a completely different topic.\n\nThe temperature at which water boils at sea level is 100\u00b0C (or 212\u00b0F). Would you like to ask a question about the travel and expense policy from the handbook, or is there anything else I can help you with?",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o05",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 3,
+      "reply": "It seems you're trying to change the topic!\n\nTo answer your question, water boils at 100\u00b0C (212\u00b0F) at sea level.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o05",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 3,
+      "reply": "I'm happy to help with that question, but I think it might be a bit of a departure from the hotel and travel policies we've been discussing.\n\nTo answer your question, water boils at 100\u00b0C (212\u00b0F) at sea level.\n\nNow, if you'd like to get back to the travel and hotel policies, I'm here to help with any questions you have!",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o06",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "It seems we took a slight detour from the employee handbook!\n\nTo answer your math question: The square root of 144 is 12.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o06",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 3,
+      "reply": "It looks like we took a slight detour from the employee handbook!\n\nThe square root of 144 is 12. \n\nWould you like to get back to the Northwind Labs Employee Handbook?",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o06",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 3,
+      "reply": "Let's get back to the Northwind Labs Employee Handbook.\n\nAs for your question, the square root of 144 is 12.\n\nHowever, if you're looking for information related to the handbook, I'd be happy to help with any other questions you have about our policies, benefits, equipment, or information security.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o06",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 3,
+      "reply": "A quick break from the employee handbook!\n\nThe square root of 144 is 12.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o06",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 3,
+      "reply": "I'll be happy to help you with the math question.\n\nThe square root of 144 is 12.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o07",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "A brief break from the employee handbook!\n\nThe creator of the Python programming language is Guido van Rossum. He designed and implemented Python in the late 1980s and released the first version, Python 0.9.1, in 1991.\n\nNow, back to the handbook...",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o07",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 3,
+      "reply": "I'll answer your question about the Python programming language.\n\nThe Python programming language was created by Guido van Rossum, a Dutch computer programmer. He started working on the language in the late 1980s and released the first version, Python 0.9.0, in 1991.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o07",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 3,
+      "reply": "A question that has nothing to do with Northwind Labs, but I'm happy to answer nonetheless!\n\nThe Python programming language was created by Guido van Rossum in 1991. He is a Dutch computer programmer who worked at the National Research Institute for Mathematics and Computer Science in the Netherlands before moving to the United States to work at the National Center for Supercomputing Applications at the University of Illinois, where he developed the Python language. The name \"Python\" was chosen because of a joke about the difficulty of using the British phone system at the time.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o07",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 3,
+      "reply": "I'd be happy to help with your question about the Python programming language.\n\nHowever, I'd like to clarify that this is not directly related to the Northwind Labs employee handbook, but rather a standalone question.\n\nTo answer your question: The creator of the Python programming language is Guido van Rossum. He designed and implemented Python in the late 1980s and released it in 1991.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o07",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 3,
+      "reply": "I'm happy to help you with your question, but I'd be happy to clarify that this is not directly related to the Northwind Labs Employee Handbook.\n\nHowever, I can provide you with the information you're looking for:\n\nThe Python programming language was created by Guido van Rossum in the late 1980s. He began working on the language in December 1989 and released the first version, Python 0.9.0, in February 1991.\n\nNow, if you'd like to return to the Northwind Labs Employee Handbook, I'd be happy to help you with any questions or topics you'd like to discuss!",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o08",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "A delightful change of pace from the employee handbook!\n\nA hexagon is a six-sided polygon. So, the answer is 6! Would you like to ask about anything else or return to the employee handbook?",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o08",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 3,
+      "reply": "A nice change of pace from employee handbooks!\n\nA hexagon has 6 sides.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o08",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 3,
+      "reply": "It seems we have a bit of a departure from the Northwind Labs Employee Handbook!\n\nA hexagon, by definition, has six sides.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o08",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 3,
+      "reply": "That's a break from the employee handbook!\n\nA hexagon has 6 sides.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o08",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 3,
+      "reply": "That's a rather unrelated question!\n\nA hexagon, by definition, has 6 sides.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o09",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "I'm happy to help with your question, but I think there might be some confusion. The provided document is about water quality and treatment, not about photosynthesis or gas absorption.\n\nHowever, I can try to provide a general answer. In photosynthesis, plants absorb carbon dioxide (CO2) from the air, not a specific gas like oxygen. Oxygen is a byproduct of photosynthesis, not a substance that plants absorb. If you have any further questions or if you'd like to clarify which gas you're referring to, I'd be happy to try and assist you!",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o09",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 3,
+      "reply": "I think there may be a bit of a detour here!\n\nUnfortunately, I must inform you that the provided document is related to water quality and management, and not to photosynthesis or gas absorption.\n\nHowever, I can provide some general information on photosynthesis. Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of glucose.\n\nDuring photosynthesis, plants absorb carbon dioxide (CO2) and water (H2O) from the air and soil, respectively. They also absorb gases such as nitrogen (N2), oxygen (O2), and others, but not necessarily for photosynthesis. Some of these gases may be used for other metabolic processes.\n\nIf you're interested in knowing which specific gas is absorbed for photosynthesis, it's generally carbon dioxide (CO2) and water (H2O). However, I couldn't find any information on a specific gas being absorbed by plants for photosynthesis.\n\nIf you could provide more context or clarify your question, I'll do my best to help!",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o09",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 3,
+      "reply": "I'm happy to help with your question, but I need to clarify that the provided text doesn't mention anything about gas absorption from the air for photosynthesis. However, I can answer your question based on my general knowledge.\n\nPhotosynthesis primarily involves the absorption of carbon dioxide (CO2) from the air, not gas in general. Plants absorb CO2 from the air through tiny openings called stomata on their leaves. This process is essential for plant growth and development, as it allows them to produce glucose and oxygen.\n\nIf you have any further questions or concerns, feel free to ask!",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o09",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 3,
+      "reply": "I'm happy to help, but it seems we've taken a detour from the Riverton Municipal Water Utility report. The question you asked appears to be from a science or biology context.\n\nTo answer your question: plants absorb carbon dioxide (CO2) from the air for photosynthesis.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o09",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 3,
+      "reply": "I think there might be some confusion! This conversation is about water quality and treatment, not about plants absorbing gas for photosynthesis. If you'd like to know about the treatment process of Riverton's water, I can help with that.",
+      "correct": false,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o10",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "A sudden change of topic! According to the world's oceans, the largest ocean on Earth is the Pacific Ocean, covering approximately 155.6 million square kilometers (60.1 million square miles). It accounts for approximately 46% of the Earth's total ocean area and is home to many diverse ecosystems, including coral reefs, estuaries, and deep-sea environments.\n\nNow, if you'd like to get back to Riverton's water quality report, I'd be happy to help with any questions you might have!",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o10",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 3,
+      "reply": "A welcome change of pace from the water report!\n\nAccording to my knowledge, the largest ocean on Earth is the Pacific Ocean, which covers approximately 155.6 million square kilometers (60.1 million square miles). It is also the deepest ocean, with a maximum depth of about 11,022 meters (36,198 feet) in the Mariana Trench.\n\nLet me know if you have any more questions or if there's anything else I can help you with!",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o10",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 3,
+      "reply": "A change of pace from water quality reports!\n\nThe largest ocean on Earth is the Pacific Ocean, which covers approximately 155.6 million square kilometers (60.1 million square miles). It accounts for approximately 46% of the Earth's total ocean area and is home to a diverse range of marine life.\n\nNow, back to Riverton Municipal Water Utility's water quality report...",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o10",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 3,
+      "reply": "A sudden change in topic!\n\nThe largest ocean on Earth is the Pacific Ocean, covering approximately 155.6 million square kilometers (60.1 million square miles) and accounting for approximately 46% of the Earth's total ocean area.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o10",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 3,
+      "reply": "That's a completely unrelated question! However, I can still answer it for you.\n\nThe largest ocean on Earth is the Pacific Ocean, covering approximately 155.6 million square kilometers (60.1 million square miles) and accounting for approximately 46% of the Earth's total ocean area.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o11",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "A sudden change in topic! World War II ended in 1945.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o11",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 3,
+      "reply": "A sudden change of topic!\n\nWorld War II ended in 1945.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o11",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 3,
+      "reply": "A sudden change of topic!\n\nWorld War II ended in 1945.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o11",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 3,
+      "reply": "A change of pace from water quality reports!\n\nWorld War II ended in 1945.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o11",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 3,
+      "reply": "A bit of a departure from the water report!\n\nWorld War II ended in 1945.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o12",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "That's a change of pace from water assessments!\n\nThere are 7 continents on Earth:\n\n1. Africa\n2. Antarctica\n3. Asia\n4. Australia\n5. Europe\n6. North America\n7. South America\n\nLet's get back to the Riverton water utility report, though!",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o12",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 3,
+      "reply": "There are 7 continents on Earth:\n\n1. Africa\n2. Antarctica\n3. Asia\n4. Australia\n5. Europe\n6. North America\n7. South America\n\n(Fun fact: The name \"Riverton\" in the document you provided is fictional, by the way!)",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "baseline",
+      "id": "o12",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 3,
+      "reply": "A refreshing change of topic!\n\nThere are 7 continents on Earth:\n\n1. Africa\n2. Antarctica\n3. Asia\n4. Australia\n5. Europe\n6. North America\n7. South America",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o12",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 3,
+      "reply": "A refreshing change from water reports! There are 7 continents on Earth:\n\n1. Africa\n2. Antarctica\n3. Asia\n4. Australia\n5. Europe\n6. North America\n7. South America",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "baseline",
+      "id": "o12",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 3,
+      "reply": "A refreshing change of pace from water treatment reports!\n\nThere are 7 continents on Earth:\n\n1. Africa\n2. Antarctica\n3. Asia\n4. Australia\n5. Europe\n6. North America\n7. South America",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "k01",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the document, the lead engineer of Project Kestrel, Meera Rao, is responsible for the overall system design and signs off every airframe modification.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "k02",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the document, Project Kestrel, the fixed-wing autonomous survey drone, is planned to carry out its first operational survey for a customer on March 14, 2031.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "k03",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The Kestrel airframe has a wingspan of 3.4 metres. The distance from one wingtip to the other is equal to the wingspan.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "k04",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the documentation, the drone, Kestrel, can stay airborne with a full payload for approximately 2 hours and 40 minutes.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "k05",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 1,
+      "reply": "According to the document, a battery pack is taken out of service after:\n\n- 300 charge cycles\n- Or, if its capacity falls below 80% of the rated value, whichever happens first.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "k06",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 1,
+      "reply": "The resolution of the standard survey camera is not explicitly stated, but we can estimate it based on the 42-megapixel mapping camera. Assuming a standard aspect ratio, a 42-megapixel camera would have a resolution of approximately 5760 x 3360 pixels (42 MP x 4.76).",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "k07",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The long-endurance and water-crossing trials are flown at the Bhigwan reservoir.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "k08",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "Airframe K-01 made its first flight on 23 October 2029 at the Hampi test site.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "k09",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the text, the mapping accuracy on the surveyed reference field at Hampi was 3.8 centimeters horizontal and 6.1 centimeters vertical.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "k10",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "After the hard landing investigation, the crosswind limit was reduced from 9 to 7 metres per second.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "k11",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 2,
+      "reply": "According to the document, the approved budget for the development phase is 38.6 million rupees.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "k12",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The company that supplies the carbon fibre fuselage shells is Vayu Composites of Bengaluru.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "n01",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to Section 4 of the document, permanent employees receive 24 days of paid annual leave per calendar year.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "n02",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the policy, up to 8 unused days of annual leave can roll over into the next year.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "n03",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 2,
+      "reply": "The primary caregiver after a birth or adoption receives 26 weeks of paid leave at full pay.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "n04",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 2,
+      "reply": "I don't see information on specific days staff are expected to come into the office. However, I can provide you with the relevant information from the Probation and Notice section:\n\nDuring probation, the notice period on either side is two weeks. After probation is confirmed, the notice period becomes 60 days for individual contributors and 90 days for people managers.",
+      "correct": false,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "n05",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 1,
+      "reply": "The maximum hotel cost per night in Mumbai (which is a Tier 1 city) is 9,000 rupees.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "n06",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "For trips within India, the daily meal allowance (per diem) is 1,800 rupees.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "n07",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the document, each employee has an annual learning budget of 40,000 rupees that can be used for courses, certifications, books, and conference tickets.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "n08",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 2,
+      "reply": "According to the handbook, new employees serve a probation period of 6 months.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "n09",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 2,
+      "reply": "According to Northwind Labs' Employee Handbook, once probation is confirmed, the notice period for people managers becomes 90 days.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "n10",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 1,
+      "reply": "According to the documentation, laptops must lock automatically after 5 minutes of inactivity.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "n11",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 1,
+      "reply": "According to the documented context, the minimum length for a password is 14 characters.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "n12",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 2,
+      "reply": "Unfortunately, the provided document context doesn't mention the payment schedule for the yearly bonus. It only covers benefits, probation, notice, leave, and provident fund contributions.",
+      "correct": false,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "r01",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The Riverton Municipal Water Utility serves 184,300 customers.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "r02",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the Riverton Municipal Water Utility Annual Water Quality Report 2025, 62 percent of the city's drinking water supply came from Lake Merrow in 2025.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "r03",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The daily design capacity of the plant that treats lake water (Halvern Treatment Plant) is 48 million litres per day.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "r04",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The Riverton Municipal Water Utility aims for a fluoride concentration of 0.7 milligrams per litre to protect dental health.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "r05",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The highest daily water demand recorded in 2025 was 71 million litres, which occurred on 18 July 2025 during a heatwave, with both plants operating above 95 percent of their combined capacity.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "r06",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the document, non-revenue water (water that is produced but not billed due to leaks, theft, or metering errors) was 17% of production in 2025, down from 21% in 2023.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "r07",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "Ward 7 had to boil its water for 52 hours after a main break on Ferris Avenue caused a loss of pressure in the area.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "r08",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 2,
+      "reply": "The boil water notice was in effect for 52 hours.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "r09",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the document, 1,240 lead service lines were replaced during 2025.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "r10",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "The 90th percentile lead level measured in at-risk homes was 6 micrograms per litre, which is below the action level of 15 micrograms per litre.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "r11",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the document, the General Manager of the Riverton Municipal Water Utility is Helena Voss.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "r12",
+      "type": "in_doc",
+      "repeat": 0,
+      "context_chunks": 3,
+      "reply": "According to the Riverton Municipal Water Utility's Annual Water Quality Report 2025, a typical household using 15 cubic metres per month pays **$58 per month** for water and wastewater combined.",
+      "correct": true,
+      "mentions_document": true
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o01",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 0,
+      "reply": "The capital city of Japan is Tokyo.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o01",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 0,
+      "reply": "Easy one! The capital city of Japan is Tokyo.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o01",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 0,
+      "reply": "The capital city of Japan is Tokyo.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o01",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 0,
+      "reply": "The capital city of Japan is Tokyo!",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o01",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 0,
+      "reply": "The capital city of Japan is Tokyo.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o02",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 0,
+      "reply": "The chemical symbol for gold is Au.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o02",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 0,
+      "reply": "The chemical symbol for gold is Au.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o02",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 0,
+      "reply": "The chemical symbol for gold is Au.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o02",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 0,
+      "reply": "A valuable question! The chemical symbol for gold is Au.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o02",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 0,
+      "reply": "The chemical symbol for gold is Au (from the Latin word \"Aurum\").",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o03",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 0,
+      "reply": "That's an easy one! The largest planet in our solar system is Jupiter! With a diameter of approximately 142,984 kilometers (88,846 miles), it's a gaseous giant that's more than 11 times the diameter of the Earth.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o03",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 0,
+      "reply": "That's a stellar question! The largest planet in our solar system is Jupiter! It's a gas giant, boasting an impressive diameter of approximately 142,984 kilometers (88,846 miles).",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o03",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 0,
+      "reply": "You've got your astronomy questions on point! The largest planet in our solar system is Jupiter. It's a gas giant, with a diameter of approximately 142,984 kilometers (88,846 miles).",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o03",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 0,
+      "reply": "That's an easy one, superstar! The largest planet in our solar system is Jupiter! It's a gas giant with a whopping diameter of approximately 142,984 kilometers (88,846 miles). That's more than 11 times the diameter of our own Earth!",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o03",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 0,
+      "reply": "Easy peasy, space newbie! The largest planet in our solar system is Jupiter! It's a gas giant, with a diameter of approximately 142,984 kilometers (88,846 miles).",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o04",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 0,
+      "reply": "A timeless question! The play Romeo and Juliet was written by the legendary English playwright William Shakespeare. It's one of his most famous and enduring works, and its tragic love story has captivated audiences for centuries!",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o04",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 0,
+      "reply": "The classic tale of star-crossed lovers! William Shakespeare wrote the tragic play Romeo and Juliet.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o04",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 0,
+      "reply": "A timeless question! The play \"Romeo and Juliet\" was written by the renowned English playwright William Shakespeare.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o04",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 0,
+      "reply": "A timeless question! The play Romeo and Juliet was written by the renowned English playwright William Shakespeare.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o04",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 0,
+      "reply": "A classic question! The play Romeo and Juliet was written by the renowned English playwright William Shakespeare.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o05",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 0,
+      "reply": "Easy peasy! At sea level, water boils at 100\u00b0C.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o05",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 0,
+      "reply": "At sea level, water boils at 100 degrees Celsius (\u00b0C).",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o05",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 0,
+      "reply": "Water boils at 100\u00b0C (or 212\u00b0F) at sea level.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o05",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 0,
+      "reply": "The boiling point of water at sea level is 100\u00b0C.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o05",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 0,
+      "reply": "At sea level, water boils at 100\u00b0C (212\u00b0F).",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o06",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 0,
+      "reply": "Easy peasy! The square root of 144 is 12.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o06",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 0,
+      "reply": "The square root of 144 is 12.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o06",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 0,
+      "reply": "The square root of 144 is 12.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o06",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 0,
+      "reply": "A simple math question!\n\nThe square root of 144 is 12.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o06",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 0,
+      "reply": "Easy peasy!\n\nThe square root of 144 is 12.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o07",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 0,
+      "reply": "Python was created by Guido van Rossum, a Dutch computer programmer.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o07",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 0,
+      "reply": "Python was created by Guido van Rossum, a Dutch computer programmer. He released the first version of Python in 1991 and continued to maintain and update the language until his retirement in 2018.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o07",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 0,
+      "reply": "Python was created by Guido van Rossum, a Dutch computer programmer. He began working on Python in the late 1980s and released the first version, Python 0.9.1, in 1991. The language was named after the British comedy group Monty Python's Flying Circus.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o07",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 0,
+      "reply": "Python was created by Guido van Rossum, a Dutch computer programmer.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o07",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 0,
+      "reply": "Python was created by Guido van Rossum, a Dutch computer programmer.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o08",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 0,
+      "reply": "Six! That's right, a hexagon is a polygon with six sides.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o08",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 0,
+      "reply": "A hexagon has 6 sides.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o08",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 0,
+      "reply": "The answer is straightforward: a hexagon has 6 sides!",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o08",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 0,
+      "reply": "A hexagon by definition has 6 sides.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o08",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 0,
+      "reply": "By definition, a hexagon has 6 sides.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o09",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 0,
+      "reply": "Carbon dioxide (CO2).",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o09",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 0,
+      "reply": "That would be carbon dioxide (CO2)!",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o09",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 0,
+      "reply": "Carbon dioxide!",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o09",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 0,
+      "reply": "The answer is: Oxygen.",
+      "correct": false,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o09",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 0,
+      "reply": "That's a breath of fresh air! Plants absorb carbon dioxide (CO2) from the air for photosynthesis.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o10",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 0,
+      "reply": "The largest ocean on Earth is the Pacific Ocean, which covers approximately 155.6 million square kilometers (60.1 million square miles). It accounts for about 46% of the Earth's total ocean area!",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o10",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 0,
+      "reply": "That would be the Pacific Ocean, covering an area of approximately 155.6 million square kilometers (60.1 million square miles).",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o10",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 0,
+      "reply": "The largest ocean on Earth is the Pacific Ocean. It covers approximately 155.6 million square kilometers (60.1 million square miles), accounting for about 46% of the Earth's total ocean area.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o10",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 0,
+      "reply": "The Pacific Ocean is the largest of the five oceans, covering approximately 155.6 million square kilometers (60.1 million square miles) and accounting for about 46% of the Earth's total ocean area.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o10",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 0,
+      "reply": "The Pacific Ocean is the largest of the five oceans, covering an area of approximately 155.6 million square kilometers (60.1 million square miles).",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o11",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 0,
+      "reply": "World War II officially ended in 1945, specifically on two dates: \n\n- May 8, 1945 (V-E Day, or Victory in Europe Day)\n- September 2, 1945 (V-J Day, or Victory over Japan Day)",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o11",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 0,
+      "reply": "World War II officially ended in 1945. The war in Europe ended on May 8, 1945 (V-E Day), while the war in the Pacific ended on September 2, 1945 (V-J Day).",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o11",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 0,
+      "reply": "The end year of World War II is a bit nuanced, as it's generally agreed that it ended in two parts: \n\n- The formal surrender of Germany (V-E Day) on May 8, 1945.\n- The formal surrender of Japan (V-J Day) on September 2, 1945.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o11",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 0,
+      "reply": "A question that's sure to bring back memories! World War II ended in 1945. Specifically, two dates mark its conclusion:\n\n* May 8, 1945: V-E Day (Victory in Europe Day)\n* September 2, 1945: V-J Day (Victory over Japan Day)\n\nThese two dates signify the official end of the war in Europe and the Pacific, respectively.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o11",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 0,
+      "reply": "A momentous question! World War II ended in 1945. Specifically, two dates mark its conclusion:\n\n1. May 8, 1945: V-E Day (Victory in Europe Day) in Western Europe, marking the end of the war in Europe.\n2. September 2, 1945: V-J Day (Victory over Japan Day) in Japan, marking the formal surrender of Japan and the end of the war in the Pacific.\n\nBoth dates are significant, but September 2, 1945, is generally considered the official end of World War II.",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o12",
+      "type": "off_topic",
+      "repeat": 0,
+      "context_chunks": 0,
+      "reply": "A question that's always a continent-ally good idea!\n\nThere's a bit of debate about this, but the most widely accepted number is 7. The 7 continents are:\n\n1. Africa\n2. Antarctica\n3. Asia\n4. Australia\n5. Europe\n6. North America\n7. South America\n\nHowever, some sources group Europe and Asia together as a single continent, Eurasia, which is why you might see 6 or 6.5 continents depending on who you ask!",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o12",
+      "type": "off_topic",
+      "repeat": 1,
+      "context_chunks": 0,
+      "reply": "A geography question to start the day! There are 7 continents on Earth, and they are:\n\n1. Africa\n2. Antarctica\n3. Asia\n4. Australia\n5. Europe\n6. North America\n7. South America\n\nOf course, there's some debate about whether Europe and Asia should be considered a single continent ( Eurasia), but the 7-continent model is the most commonly used!",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o12",
+      "type": "off_topic",
+      "repeat": 2,
+      "context_chunks": 0,
+      "reply": "A question that's easy as pie (or continent, haha)! There are 7 continents on Earth, widely accepted by geographers and scientists. They are:\n\n1. Africa\n2. Antarctica\n3. Asia\n4. Australia\n5. Europe\n6. North America\n7. South America\n\n(Note: Some sources may group Europe and Asia as a single continent, Eurasia, but the 7-continent model is the most commonly used.)",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o12",
+      "type": "off_topic",
+      "repeat": 3,
+      "context_chunks": 0,
+      "reply": "A simple question with a not-so-simple answer! The number of continents can vary depending on the source and definition used. Here are a few common classifications:\n\n* The 7-continent model: Africa, Antarctica, Asia, Australia, Europe, North America, and South America.\n* The 6-continent model: Combine Europe and Asia as Eurasia, and eliminate Australia.\n* The 5-continent model: Combine Africa, Asia, and Europe as Afro-Eurasia, and eliminate North and South America, Australia, and Antarctica.\n\nThe most widely accepted classification is the 7-continent model, but it's worth noting that the term \"continent\" can be somewhat subjective. Which model do you think is most appealing?",
+      "correct": true,
+      "mentions_document": false
+    },
+    {
+      "config": "with_cutoff",
+      "id": "o12",
+      "type": "off_topic",
+      "repeat": 4,
+      "context_chunks": 0,
+      "reply": "A question that sparks debate among geographers and travelers alike! The answer is: 7 continents. The most widely accepted continents are:\n\n1. Africa\n2. Antarctica\n3. Asia\n4. Australia\n5. Europe\n6. North America\n7. South America\n\n(Note: Some sources may group Europe and Asia together as Eurasia, or combine North and South America as the American continent. But the 7-continent model is the most commonly used classification.)",
+      "correct": true,
+      "mentions_document": false
+    }
+  ]
+}

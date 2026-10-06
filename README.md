@@ -22,6 +22,7 @@ A privacy-first personal AI assistant that runs on your own machine: **local LLM
 - [Detailed Capabilities](#-detailed-capabilities)
 - [Project Structure](#-project-structure)
 - [Testing](#-testing)
+- [Evaluation](#-evaluation)
 - [Security & Privacy](#-security--privacy)
 - [Known Limitations](#-known-limitations)
 - [Troubleshooting](#-troubleshooting)
@@ -206,9 +207,11 @@ Each conversation is saved as `chat_sessions/<uuid>.json` with its title (first 
 OFFLINE-AI-ASSISTANT/
 ├── UIChat.py               # Streamlit web app (chat, RAG, voice, session history)
 ├── TerminalChat.py         # Minimal terminal chat client
+├── rag.py                  # Document Q&A pipeline (chunking, embeddings, FAISS, prompt), shared by app + eval
 ├── whisper_transcribe.py   # Speech-to-text worker (run as a subprocess by UIChat.py)
 ├── tts_worker.py           # Text-to-speech worker (run as a subprocess by UIChat.py)
-├── tests/test_app.py       # unittest suite (Streamlit AppTest + subprocess tests)
+├── tests/                  # unittest suite (Streamlit AppTest, subprocess and unit tests)
+├── eval/                   # RAG evaluation: 3 documents, 48 labelled questions, scripts, results
 ├── .streamlit/config.toml  # Disables Streamlit usage statistics
 ├── requirements.txt        # Pinned direct dependencies
 ├── LICENSE
@@ -228,8 +231,36 @@ The suite covers:
 - **UI**, driven headlessly with Streamlit's `AppTest`: the app renders, embedding-only models are excluded from the chat model list, a chat round trip is saved to disk, an LLM failure shows the fallback message without storing it in history, saved sessions reload, and corrupt session files are skipped.
 - **Speech workers**: TTS writes real audio; Whisper transcribes a spoken clip (macOS `say`) and fails cleanly on a missing file.
 - **Terminal client**: clean exit on end-of-input, blank lines ignored, and multi-turn memory.
+- **Evaluation helpers** (`tests/test_eval_helpers.py`): the answer grader, the context filter and the cutoff tuner.
 
 Tests that need a running Ollama server, the `llama3.2` model or cached Whisper weights are skipped automatically when those are missing. Document upload (RAG) is not covered by the automated tests, because `AppTest` cannot drive file uploads; it was verified manually in the browser.
+
+---
+
+## 📊 Evaluation
+
+`eval/` measures the document Q&A pipeline in `rag.py` on a small labelled set:
+- **Documents:** 3 fictional documents written for this evaluation (an engineering handbook, an HR handbook and a water-quality report), so the model cannot answer from its training data.
+- **Questions:** 48 in total. 36 are about the documents, each labelled with the exact evidence sentence and the expected answer terms. 12 are unrelated general-knowledge questions asked while a document is loaded. A fixed 50/50 dev/test split is used.
+
+```bash
+python eval/run_eval.py        # retrieval metrics + answers at temperature 0 (~20 min)
+python eval/sampling_check.py  # answers with the app's default sampling, unrelated questions x5
+```
+
+**Retrieval** (36 document questions, top-3 chunks of 1000 characters): Hit@3 **100%** (36/36), Hit@1 **77.8%**, MRR@3 **0.87**.
+
+**Relevance cutoff experiment.** A distance cutoff (keep only chunks with cosine similarity ≥ 0.543) was tuned on the dev split, then measured:
+
+| | No cutoff (app default) | With cutoff |
+| :--- | :--- | :--- |
+| Held-out test, temperature 0: document questions correct | 100% (18/18) | 88.9% (16/18) |
+| Held-out test, temperature 0: unrelated questions correct | 100% (6/6) | 100% (6/6) |
+| Held-out test: unrelated replies that talk about the document | 66.7% | 0% |
+| Default sampling, all 48 questions: unrelated questions correct (×5 runs) | 93.3% (56/60) | 98.3% (59/60) |
+| Default sampling: document questions correct | 100% (36/36) | 94.4% (34/36) |
+
+The cutoff stops document text from leaking into unrelated questions. Without it, 4 of 60 replies refused to answer a general question because a document was loaded. However, it also discarded the evidence for 2 document questions, so the app **keeps the cutoff disabled** (`rag.select_context` is called without a limit). The set is small (one test question ≈ 5.6 points), so these numbers describe this benchmark only.
 
 ---
 
@@ -245,7 +276,7 @@ Tests that need a running Ollama server, the `llama3.2` model or cached Whisper 
 
 ## ⚠️ Known Limitations
 
-- While a document is loaded, its top-3 chunks are added to **every** question, even unrelated ones, which can make small models answer poorly.
+- While a document is loaded, its top-3 chunks are added to **every** question, even unrelated ones. In the evaluation this made 4 of 60 replies to general questions refuse to answer; a relevance cutoff fixed that but cost accuracy on document questions (see [Evaluation](#-evaluation)).
 - Only one document can be indexed at a time, and the index lives in memory (it is rebuilt after a restart).
 - Each transcription starts a new Whisper process, which adds a few seconds of model-loading time.
 - Scanned PDFs without a text layer cannot be indexed (no OCR).
